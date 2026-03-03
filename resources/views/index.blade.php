@@ -14,28 +14,7 @@
 
 <body>
     <!-- navbar -->
-    <nav>
-        <div class="nav-kiri">
-            <ul class="img-p">
-                <img class="img-nav" src="asset/logo-metamorjiwa.png" width="50px" height="50px" alt="logo dari metamorjiwa">
-                <p class="p-nav">Metamorjiwa</p>
-            </ul>
 
-            <ul id="ul-nav">
-                <li class="li-nav">
-                    <a class="a-nav" href="#tentang">Tentang</a>
-                </li>
-                <li class="li-nav">
-                    <a class="a-nav" href="#preview">Preview</a>
-                </li>
-                <li class="li-nav">
-                    <a class="a-nav" href="#testimoni">Testimoni</a>
-                </li>
-            </ul>
-        </div>
-
-        <button class="but-nav"> DAPATKAN</button>
-    </nav>
     <!-- navbar END -->
 
     <!-- hero section -->
@@ -67,9 +46,8 @@
     </section>
     <!-- hero section END -->
 
+    <!-- tentang -->
     <div class="background-second">
-
-        <!-- tentang -->
         <section>
             <div id="tentang">
                 <ul class="img-tentang">
@@ -94,10 +72,10 @@
                 </ul>
             </div>
         </section>
-        <!-- tentang END -->
+    </div>
+    <!-- tentang END -->
 
-        <!-- PREVIEW -->
-
+<!-- PREVIEW -->
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -132,12 +110,10 @@
             <!-- If we need scrollbar -->
             <!-- <div class="swiper-scrollbar"></div> -->
         </div>
-
 <!-- PREVIEW END -->
 
 
 <!-- TESTIMONI -->       
-
     <section id="testimoni">
         <h2 class="hand-font">Ulasan Dari Pelanggan</h2>
 
@@ -189,7 +165,6 @@
             <div class=" swiper-pagination"></div>
         </div>
     </section>
-
 <!-- TESTIMONI END -->
 
 
@@ -221,7 +196,8 @@
 
             </div>
         </section>
-        <!-- sampel END -->
+<!-- sampel END -->
+
         <!-- cta -->
         <section>
             <div id="hubungi">
@@ -232,37 +208,9 @@
                 <button class="but-hubungi"><img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami </button>
             </div>
         </section>
-
         <!-- cta END -->
-        <!-- footer -->
-        <section id="foot">
-            <hr>
-            <div>
-                <ul class="footer">
-                    <li class="li-foot">
-                        <h3>Metamorjiwa</h3>
-                        <p>Menerbitkan Karya, Menginspirasi Dunia.</p>
-                    </li>
-                    <li class="li-foot">
-                        <h3>Tautan Cepat</h3>
-                        <p>Tentang Kami</p>
-                        <p>Keunggulan</p>
-                        <p>Layanan</p>
-                        <p>Portofolio</p>
-                    </li>
-                    <li class="li-foot">
-                        <h3>Ikuti Kami</h3>
-                        <img src="asset/instagram.png" width="30" height="30">
-                        <img src="asset/facebook.png" width="30" height="30">
-                        <img src="asset/twitter.png" width="30" height="30">
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-    </div>
-
-    <p class="akhir">© 2025 Penerbit Metamorjiwa. Didesain dengan ❤️ di Indonesia. Web Developed by Techade.id</p>
+         
+    <!-- footer -->
     <!-- footer END -->
     <!-- bawah -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
