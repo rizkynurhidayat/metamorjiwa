@@ -232,4 +232,21 @@ const swiper = new Swiper('.testi-swiper', {
   },
 });
 
+// === ANIMASI HERO MENGECIL SAAT SCROLL ===
+window.addEventListener('scroll', function() {
+    const hero = document.getElementById('hero');
+    const scrollPosition = window.scrollY;
+    
+    // Perhitungan seberapa cepat hero mengecil. Angka 1500 dan 1000 bisa kamu ubah sesuai selera.
+    let scaleValue = 1 - (scrollPosition / 1500);
+    let opacityValue = 1 - (scrollPosition / 1000);
+
+    // Batasi nilai agar hero tidak terlalu kecil atau menghilang sepenuhnya terlalu cepat
+    if (scaleValue < 0.8) scaleValue = 0.8; // Ukuran minimal 80%
+    if (opacityValue < 0) opacityValue = 0;
+
+    // Terapkan perubahan ke hero
+    hero.style.transform = `scale(${scaleValue})`;
+    hero.style.opacity = opacityValue;
+});
 
