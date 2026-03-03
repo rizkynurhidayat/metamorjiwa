@@ -1,3 +1,5 @@
+@extends('layouts.navbar')
+@extends('layouts.footer')
 <!DOCTYPE html>
 <html lang="en">
 
