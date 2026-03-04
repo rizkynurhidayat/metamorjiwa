@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
 </head>
 
@@ -44,7 +44,7 @@
     </a>
     <section>
         <div id="hero">
-            <ul class="hero-kiri">
+            <ul class="hero-kiri" data-aos="fade-up">
                 <li>
                     <h1 class="hand-font">Temukan Diri Lewat Kata</h1>
                 </li>
@@ -58,7 +58,7 @@
                     <button class="but-hero"> Download Template</button>
                 </li>
             </ul>
-            <ul class="hero-kanan">
+            <ul class="hero-kanan" data-aos="fade-left" data-aos-delay="300">
                 <li>
                     <img src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
                 </li>
@@ -72,12 +72,12 @@
         <!-- tentang -->
         <section>
             <div id="tentang">
-                <ul class="img-tentang">
+                <ul class="img-tentang" data-aos="zoom-in">
                     <li>
                         <img src="asset/butterfly.png" width="250" height="250">
                     </li>
                 </ul>
-                <ul class="text-tentang">
+                <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">>
                     <li>
                         <h1>Ruang Aman Untuk Menulis</h1>
                     </li>
@@ -267,6 +267,17 @@
     <!-- bawah -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, /* Durasi animasi 1 detik biar smooth */
+        once: true,     /* Animasi hanya jalan 1x saat pertama kali di-scroll */
+        offset: 100     /* Jarak elemen dari bawah layar sebelum animasi mulai */
+      });
+    </script>
 </body>
 
 </html>
