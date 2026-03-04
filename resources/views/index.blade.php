@@ -44,6 +44,9 @@
     </a>
     <section>
         <div id="hero">
+            <svg class="sparkle sparkle-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.9"/></svg>
+            <svg class="sparkle sparkle-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.6"/></svg>
+            <svg class="sparkle sparkle-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.8"/></svg>
             <ul class="hero-kiri" data-aos="fade-up">
                 <li>
                     <h1 class="hand-font">Temukan Diri Lewat Kata</h1>
@@ -60,7 +63,7 @@
             </ul>
             <ul class="hero-kanan" data-aos="fade-left" data-aos-delay="300">
                 <li>
-                    <img src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
+                    <img class="floating-book" src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
                 </li>
             </ul>
         </div>
