@@ -27,7 +27,7 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Login Admin</title>
 
     <meta name="description" content="" />
 
@@ -131,12 +131,12 @@
                       </g>
                     </svg>
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                  <span class="app-brand-text demo text-body fw-bolder">Metamorjiwa</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to Sneat! 👋</h4>
-              <p class="mb-4">Please sign-in to your account and start the adventure</p>
+              <h4 class="mb-2">Selamat Datang Di Halaman Admin 👋</h4>
+              <p class="mb-4">Masukkan data Dibawah Ini</p>
 
               
               @csrf 
@@ -158,9 +158,7 @@
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
                     <label class="form-label" for="password">Password</label>
-                    <a href="auth-forgot-password-basic.html">
-                      <small>Forgot Password?</small>
-                    </a>
+                    
                   </div>
                   <div class="input-group input-group-merge">
                     <input
@@ -189,6 +187,7 @@
                 </div>
               </form>
 
+            
               <p class="text-center">
                 <span>New on our platform?</span>
                 
