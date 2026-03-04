@@ -16,7 +16,7 @@ use App\Http\Controllers\MessageController;
 // Route::get('/logout', [AuthController::class, 'logout']);
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/Admin',[AdminController::class, 'view'])->name('Admin');
+    Route::get('/admin',[AdminController::class, 'view'])->name('Admin');
     // route logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     
