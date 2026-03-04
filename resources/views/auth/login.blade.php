@@ -138,7 +138,7 @@
               <h4 class="mb-2">Selamat Datang Di Halaman Admin 👋</h4>
               <p class="mb-4">Masukkan data Dibawah Ini</p>
 
-              
+              <form id="formAuthentication" class="mb-3" action="{{route('login')}}" method="POST">
               @csrf 
               <div class="mb-3">
                   <label for="email" class="form-label">Email or Username</label>
