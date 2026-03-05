@@ -7,7 +7,7 @@ use App\Http\Controllers\PreviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TestimoniController;
 
@@ -43,13 +43,9 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/service/edit/{service}', [ServiceController::class, 'update'])->name('service.update');
     Route::delete('/service/{service}', [ServiceController::class, 'destroy'])->name('service.destroy');
 
-    Route::get('/team', [TeamController::class, 'view'])->name('team.index');
-    Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
-    Route::post('/team/create', [TeamController::class, 'store'])->name('team.store');
-    Route::get('/team/edit/{team}', [TeamController::class, 'edit'])->name('team.edit');
-    Route::put('/team/edit/{team}', [TeamController::class, 'update'])->name('team.update');
-    Route::delete('/team/{team}', [TeamController::class, 'destroy'])->name('team.destroy');
-
+    Route::get('/contact', [ContactController::class, 'view'])->name('contact.edit');
+    Route::put('/contact', [ContactController::class, 'update'])->name('contact.update');
+   
     Route::get('/message', [MessageController::class, 'view'])->name('message.index');
     Route::get('/message/view/{message}', [MessageController::class, 'edit'])->name('message.edit');
     Route::delete('/message/{message}', [MessageController::class, 'destroy'])->name('message.destroy');

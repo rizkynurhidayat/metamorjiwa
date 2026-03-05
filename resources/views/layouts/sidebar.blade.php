@@ -114,11 +114,11 @@
               </a>
             </li>
             <!-- Portofolios -->
-             <li class="menu-item {{request()->is('team') || request()->is('team/*') ? 'active' : ''}}">
-              <a href="{{route('team.index')}}" class="menu-link">
+             <li class="menu-item {{request()->is('contact') || request()->is('contact/*') ? 'active' : ''}}">
+              <a href="{{route('contact.index')}}" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="Analytics">Team</div>
+                <div data-i18n="Analytics">Contact</div>
               </a>
             </li>
             <!-- Testimoni -->
