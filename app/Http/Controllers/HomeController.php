@@ -16,8 +16,6 @@ class HomeController extends Controller
     $validator = $request->validate([
         'name' => 'required|string|max:255',
             'email' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
-            'message' => 'required|string|max:255',
             ]);
 
     $message = Message::create($validator);
