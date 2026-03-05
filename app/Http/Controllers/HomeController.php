@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Portofolio;
+use App\Models\Preview;
 use App\Models\Service;
 use App\Models\Hero;
 use App\Models\Team;
@@ -29,16 +29,13 @@ class HomeController extends Controller
 
     public function view()
     {
-        $portofolio = Portofolio::all();
-        $message = Message::all();
-        $service = Service::all();
+        $previews = Preview::all();
+        
         $hero = hero::first();
-        $teams = Team::all();
         return view('index', [
-            "portofolio" => $portofolio,
+            "preview" => $previews,
             "hero" => $hero,
-            "service" => $service,
-            "teams" => $teams
+            
         ]);
     }
 }

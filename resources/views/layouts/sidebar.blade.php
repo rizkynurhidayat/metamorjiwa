@@ -98,11 +98,11 @@
               </a>
             </li>
             <!-- Portofolios -->
-             <li class="menu-item {{request()->is('portofolio') || request()->is('portofolio/*') ? 'active' : ''}}">
-              <a href="{{route('portofolio.index')}}" class="menu-link">
+             <li class="menu-item {{request()->is('preview') || request()->is('preview/*') ? 'active' : ''}}">
+              <a href="{{route('preview.index')}}" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Analytics">Portofolio</div>
+                <div data-i18n="Analytics">Preview</div>
               </a>
             </li>
             <!-- services -->

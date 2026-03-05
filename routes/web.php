@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\PreviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\ServiceController;
@@ -25,12 +25,12 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/users/{user}', [AdminController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('users.destroy');
 
-    Route::get('/portofolio', [PortofolioController::class, 'view'])->name('portofolio.index');
-    Route::get('/portofolio/create', [PortofolioController::class, 'create'])->name('portofolio.create');
-    Route::post('/portofolio/create', [PortofolioController::class, 'store'])->name('portofolio.store');
-    Route::get('/portofolio/edit/{portofolio}', [PortofolioController::class, 'edit'])->name('portofolio.edit');
-    Route::put('/portofolio/edit/{portofolio}', [PortofolioController::class, 'update'])->name('portofolio.update');
-    Route::delete('/portofolio/{portofolio}', [PortofolioController::class, 'destroy'])->name('portofolio.destroy');
+    Route::get('/preview', [PreviewController::class, 'view'])->name('preview.index');
+    Route::get('/preview/create', [PreviewController::class, 'create'])->name('preview.create');
+    Route::post('/preview/create', [PreviewController::class, 'store'])->name('preview.store');
+    Route::get('/preview/edit/{preview}', [PreviewController::class, 'edit'])->name('preview.edit');
+    Route::put('/preview/edit/{preview}', [PreviewController::class, 'update'])->name('preview.update');
+    Route::delete('/preview/{preview}', [PreviewController::class, 'destroy'])->name('preview.destroy');
     
     Route::get('/hero', [HeroController::class, 'view'])->name('hero.edit');
     Route::put('/hero/{hero}', [HeroController::class, 'update'])->name('hero.update');

@@ -105,24 +105,16 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                @foreach ( $preview as $preview )
                 <div class="swiper-slide" >
                     <div class="preview-item2">
-                        <img  src="asset/monthly habit tracker.png">
-                        <p class="hand-font">Praktis dan Mudah Diakses</p>
-                    </div>
+                        
+                    <img  src="{{ asset('storage/'.$preview->image) }}">
+                    <p class="hand-font">{{ $preview->tagline}}</p>
                 </div>
-                <div class="swiper-slide"> 
-                    <div  class="preview-item2">
-                        <img  src="asset/refleksi diri.png">
-                        <p class="hand-font">Desain Simpel dan Estetik</p>
-                    </div>
-                 </div>
-                 <div class="swiper-slide">
-                     <div  class="preview-item2">
-                        <img  src="asset/weekly palnner.png">
-                        <p class="hand-font">Serbaguna dan Fleksibel</p>
-                    </div>
-                </div>
+            </div>
+            @endforeach
+               
                 
             </div>
             <!-- If we need pagination -->
