@@ -11,8 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('testimonis', function (Blueprint $table) {
-            $table->string('image')->nullable()->change();
+        Schema::create('tentang', function (Blueprint $table) {
+            $table->id();
+            $table->string('heading');
+            $table->string('sub_heading');
+            $table->string('deskripsi');
+            $table->timestamps();
         });
     }
 
@@ -21,8 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('testimonis', function (Blueprint $table) {
-            $table->string('image')->nullable(false)->change();
-        });
+        Schema::dropIfExists('tentang');
     }
 };

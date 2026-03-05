@@ -83,17 +83,13 @@
                 </ul>
                 <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">>
                     <li>
-                        <h1>Ruang Aman Untuk Menulis</h1>
+                        <h1>{{ $tentang->heading ?? 'Ruang Aman Untuk Menulis' }}</h1>
                     </li>
                     <li>
-                        <h3>Tempat untuk berhenti sejenak dan menulis dengan jujur, tanpa penilaian.</h3>
+                        <h3>{{ $tentang->sub_heading ?? 'Tempat untuk berhenti sejenak dan menulis dengan jujur, tanpa penilaian.' }}</h3>
                     </li>
                     <li>
-                        <p>Setiap halaman hadir bukan untuk mengarahkan, tapi menemani. Kamu bebas menulis dengan caramu
-                            sendiri.
-                            <br>Rapi atau berantakan, penuh atau kosong. Karena proses mengenal diri tidak selalu jelas,
-                            dan itu tidak apa-apa.
-                        </p>
+                        <p>{{ $tentang->deskripsi ?? 'Setiap halaman hadir bukan untuk mengarahkan, tapi menemani. Kamu bebas menulis dengan caramu sendiri. Rapi atau berantakan, penuh atau kosong. Karena proses mengenal diri tidak selalu jelas, dan itu tidak apa-apa.' }}</p>
                     </li>
                 </ul>
             </div>

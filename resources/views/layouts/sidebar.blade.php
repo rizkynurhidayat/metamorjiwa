@@ -97,6 +97,13 @@
                 <div data-i18n="Analytics">Hero</div>
               </a>
             </li>
+            <!-- Tentang -->
+             <li class="menu-item {{request()->is('tentang') || request()->is('tentang/*') ? 'active' : ''}}">
+              <a href="{{route('tentang.edit')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-info-circle"></i>
+                <div data-i18n="Analytics">Tentang</div>
+              </a>
+            </li>
             <!-- Portofolios -->
              <li class="menu-item {{request()->is('preview') || request()->is('preview/*') ? 'active' : ''}}">
               <a href="{{route('preview.index')}}" class="menu-link">
