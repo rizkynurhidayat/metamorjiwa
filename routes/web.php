@@ -10,6 +10,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\TentangController;
 
 
 // RoutefolioController;
@@ -35,6 +36,9 @@ Route::middleware(['auth'])->group(function(){
     
     Route::get('/hero', [HeroController::class, 'edit'])->name('hero.edit');
     Route::put('/hero', [HeroController::class, 'update'])->name('hero.update');
+
+    Route::get('/tentang', [TentangController::class, 'edit'])->name('tentang.edit');
+    Route::put('/tentang', [TentangController::class, 'update'])->name('tentang.update');
 
     Route::get('/service', [ServiceController::class, 'view'])->name('service.index');
     Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');

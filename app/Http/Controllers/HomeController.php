@@ -7,6 +7,7 @@ use App\Models\Preview;
 use App\Models\Service;
 use App\Models\Hero;
 use App\Models\Testimoni;
+use App\Models\Tentang;
 use App\Models\Message;
 
 
@@ -29,12 +30,14 @@ class HomeController extends Controller
     {
         $previews = Preview::all();
         $testimonis = Testimoni::all();
+        $tentang = Tentang::first();
         
         $hero = hero::first();
         
         return view('index', [
             "preview" => $previews,
             "testimonis" => $testimonis,
+            "tentang" => $tentang,
             "hero" => $hero,
             
             

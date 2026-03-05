@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('profile');
             $table->integer('rating');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
