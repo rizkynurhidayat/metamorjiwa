@@ -75,10 +75,7 @@ Route::middleware(['guest'])->group(function(){
     Route::post('/register', [AuthController::class, 'register']);
     
     Route::get('/', [HomeController::class,'view']);
-    Route::post('/message', [HomeController::class, 'store'])->name('message.store');
      
 });
 
-
-
-   
+Route::post('/message', [HomeController::class, 'store'])->name('message.store');
