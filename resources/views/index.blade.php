@@ -185,6 +185,8 @@
                     <h3>Tulis Setiap Lembaran Hidup Anda</h3>
                     <img src="asset/book hover.png" width="300" height="400">
                 </div>
+                <form action="{{ route('message.store') }}" method="POST" id="contactForm" >
+                    @csrf
                 <div class="sampel-card">
                     <div>
                         <img class="butterfly" src="asset/1butterfly.png" width="100" height="100">
@@ -195,15 +197,30 @@
                     </div>
                     <div class="sampel-isi">
                         <label for="name">Nama:</label><br>
-                        <input type="text" placeholder="Your Name">
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required>
+                        @error('name')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                         <label for="email">Email:</label><br>
-                        <input type="text" placeholder="@gmail.com">
+                        <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required>
+                        @error('email')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
+
+                     @if (session('success'))
+                    <div class="" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                        </div>
+                    </div>
+                    @endif
+
                     <div class="but-sampel">
-                        <button class="but-sampel">Dapatkan Sampel Gratis Sekarang</button>
+                        <button class="but-sampel" id="submitButton" type="submit">Dapatkan Sampel Gratis Sekarang</button>
                     </div>
                 </div>
-
+            </form>   
             </div>
         </section>
         <!-- sampel END -->
