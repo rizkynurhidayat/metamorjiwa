@@ -9,6 +9,7 @@ use App\Http\Controllers\HeroController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\TestimoniController;
 
 
 // RoutefolioController;
@@ -52,6 +53,13 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/message', [MessageController::class, 'view'])->name('message.index');
     Route::get('/message/view/{message}', [MessageController::class, 'edit'])->name('message.edit');
     Route::delete('/message/{message}', [MessageController::class, 'destroy'])->name('message.destroy');
+
+    Route::get('/testimoni', [TestimoniController::class, 'view'])->name('testimoni.index');
+    Route::get('/testimoni/create', [TestimoniController::class, 'create'])->name('testimoni.create');
+    Route::post('/testimoni/create', [TestimoniController::class, 'store'])->name('testimoni.store');
+    Route::get('/testimoni/edit/{testimoni}', [TestimoniController::class, 'edit'])->name('testimoni.edit');
+    Route::put('/testimoni/edit/{testimoni}', [TestimoniController::class, 'update'])->name('testimoni.update');
+    Route::delete('/testimoni/{testimoni}', [TestimoniController::class, 'destroy'])->name('testimoni.destroy');
     
     });
 

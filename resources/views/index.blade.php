@@ -112,9 +112,9 @@
                         
                     <img  src="{{ asset('storage/'.$preview->image) }}">
                     <p class="hand-font">{{ $preview->tagline}}</p>
+                    </div>
                 </div>
-            </div>
-            @endforeach
+                @endforeach
                
                 
             </div>
@@ -134,46 +134,35 @@
 
 <!-- TESTIMONI -->       
 
-    <section id="testimoni">
+    @php
+        $bgImage = $testimonis->first()?->image;
+        $bgUrl = ($bgImage && Storage::disk('public')->exists($bgImage))
+            ? asset('storage/' . $bgImage)
+            : null;
+    @endphp
+    <section id="testimoni" @if($bgUrl) style="background-image: url('{{ $bgUrl }}'); background-size: cover; background-position: center;" @endif>
         <h2 class="hand-font">Ulasan Dari Pelanggan</h2>
 
         <div class="testi-swiper">
             <div class="swiper-wrapper testimoni">
 
+            @foreach ($testimonis as $testimoni)
             <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Menulis jurnal membantuku memahami perasaan yang tadinya sulit dijelaskan.</p>
-                <p class="nama">Robert Dalves</p>
+                <div>
+                    @for ($i = 0; $i < $testimoni->rating; $i++)
+                        ⭐
+                    @endfor
+                </div>
+                <h3>{{ $testimoni->heading }}</h3>
+                <p>{{ $testimoni->sub_heading }}</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                    <p class="nama">{{ $testimoni->name }}</p>
+                    @if($testimoni->profile && Storage::disk('public')->exists($testimoni->profile))
+                        <img src="{{ asset('storage/' . $testimoni->profile) }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="profile">
+                    @endif
+                </div>
             </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Setelah menulis, pikiranku terasa lebih ringan dan lebih jujur pada diri sendiri.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Halaman ini jadi tempat aman untuk menumpahkan isi kepala tanpa takut dihakimi.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Aku tidak menemukan jawaban, tapi aku merasa lebih tenang.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Menulis hari ini membuatku sadar bahwa perasaanku valid.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
+            @endforeach
             
             </div>
 
@@ -261,8 +250,6 @@
     <p class="akhir">© 2025 Penerbit Metamorjiwa. Didesain dengan ❤️ di Indonesia. Web Developed by Techade.id</p>
     <!-- footer END -->
     <!-- bawah -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 

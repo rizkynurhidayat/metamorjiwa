@@ -173,7 +173,7 @@
 
 //PREVIEW
 
-constswiper = new Swiper('.swiper', {
+const previewSwiper = new Swiper('.swiper', {
     // Optional parameters
     effect: 'coverflow',
     direction: 'horizontal',
@@ -189,25 +189,20 @@ constswiper = new Swiper('.swiper', {
     },
     // If we need pagination
     pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper > .swiper-pagination',
     },
 
     // Navigation arrows
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
+        nextEl: '.swiper-button-next.preview',
+        prevEl: '.swiper-button-prev.preview',
     },
 });
 
 
 // TESTIMONI
-const swiper = new Swiper('.testi-swiper', {
-  loop: true,
+const testiSwiper = new Swiper('.testi-swiper', {
+  
   centeredSlides: true,
   slidesPerView: 'auto',
   spaceBetween: 40,
@@ -222,13 +217,13 @@ const swiper = new Swiper('.testi-swiper', {
   },
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.testi-swiper .swiper-pagination',
     clickable: true,
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.testi-swiper .swiper-button-next',
+    prevEl: '.testi-swiper .swiper-button-prev',
   },
 });
 

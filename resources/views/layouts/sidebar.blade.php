@@ -121,6 +121,13 @@
                 <div data-i18n="Analytics">Team</div>
               </a>
             </li>
+            <!-- Testimoni -->
+             <li class="menu-item {{request()->is('testimoni') || request()->is('testimoni/*') ? 'active' : ''}}">
+              <a href="{{route('testimoni.index')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-star"></i>
+                <div data-i18n="Analytics">Testimoni</div>
+              </a>
+            </li>
             <!-- Message-->
              <li class="menu-item {{request()->is('message') || request()->is('message/*') ? 'active' : ''}}">
                <a href="{{route('message.index')}}" class="menu-link">
