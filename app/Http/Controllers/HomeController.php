@@ -7,6 +7,7 @@ use App\Models\Preview;
 use App\Models\Service;
 use App\Models\Hero;
 use App\Models\Testimoni;
+use App\Models\Message;
 
 
 class HomeController extends Controller
