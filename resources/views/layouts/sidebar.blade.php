@@ -94,7 +94,7 @@
               <a href="{{route('hero.edit')}}" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Analytics">Head</div>
+                <div data-i18n="Analytics">Hero</div>
               </a>
             </li>
             <!-- Portofolios -->

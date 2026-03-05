@@ -32,8 +32,8 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/preview/edit/{preview}', [PreviewController::class, 'update'])->name('preview.update');
     Route::delete('/preview/{preview}', [PreviewController::class, 'destroy'])->name('preview.destroy');
     
-    Route::get('/hero', [HeroController::class, 'view'])->name('hero.edit');
-    Route::put('/hero/{hero}', [HeroController::class, 'update'])->name('hero.update');
+    Route::get('/hero', [HeroController::class, 'edit'])->name('hero.edit');
+    Route::put('/hero', [HeroController::class, 'update'])->name('hero.update');
 
     Route::get('/service', [ServiceController::class, 'view'])->name('service.index');
     Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');
