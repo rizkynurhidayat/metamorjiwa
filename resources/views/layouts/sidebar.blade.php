@@ -122,7 +122,7 @@
             </li>
             <!-- Portofolios -->
              <li class="menu-item {{request()->is('contact') || request()->is('contact/*') ? 'active' : ''}}">
-              <a href="{{route('contact.index')}}" class="menu-link">
+              <a href="{{route('contact.edit')}}" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-group"></i>
                 <div data-i18n="Analytics">Contact</div>
