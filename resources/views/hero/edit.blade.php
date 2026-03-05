@@ -26,21 +26,22 @@
                         @csrf
                         @method('PUT')
         
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="subheading">Subheading</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" id="subheading" name="subheading" placeholder="Contoh: Welcome To Our Studio!" value="{{ old('subheading', $hero->subheading ?? '') }}"/>
-                            @error('subheading')
-                              <div class="text-danger mt-1">{{ $message }}</div>
-                            @enderror
-                          </div>
-                        </div>
+                       
 
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="heading">Heading</label>
                           <div class="col-sm-10">
                             <input type="text" class="form-control" id="heading" name="heading" placeholder="Contoh: It's Nice To Meet You" value="{{ old('heading', $hero->heading ?? '') }}"/>
                             @error('heading')
+                              <div class="text-danger mt-1">{{ $message }}</div>
+                            @enderror
+                          </div>
+                        </div>
+                         <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="deskripsi">Deskripsi</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="deskripsi" name="deskripsi" placeholder="Contoh: Berani mengekspresikan pikiran dan perasaanmu..." value="{{ old('deskripsi', $hero->deskripsi ?? '') }}"/>
+                            @error('deskripsi')
                               <div class="text-danger mt-1">{{ $message }}</div>
                             @enderror
                           </div>
@@ -57,21 +58,21 @@
                         </div>
 
                         <div class="row mb-3">
-                          <label for="background_image" class="col-sm-2 col-form-label">Background Image</label>
+                          <label for="image" class="col-sm-2 col-form-label">Image</label>
                           <div class="col-sm-10">
-                            @if ($hero->background_image && Storage::disk('public')->exists($hero->background_image))
+                            @if ($hero->image && Storage::disk('public')->exists($hero->image))
                               <div class="mb-3">
-                                <img id="imagePreview" class="img-fluid rounded" src="{{ asset('storage/' . $hero->background_image) }}" alt="Hero background" style="max-height: 200px;" />
+                                <img id="imagePreview" class="img-fluid rounded" src="{{ asset('storage/' . $hero->image) }}" alt="Hero background" style="max-height: 200px;" />
                               </div>
                             @else
                               <div class="mb-3">
-                                <img id="imagePreview" class="img-fluid rounded d-none" src="" alt="Hero background" style="max-height: 200px;" />
-                                <div id="noImageText" class="form-text">Belum ada background image</div>
+                                <img id="imagePreview" class="img-fluid rounded d-none" src="" alt="Hero image" style="max-height: 200px;" />
+                                <div id="noImageText" class="form-text">Belum ada image</div>
                               </div>
                             @endif
-                            <input class="form-control" type="file" id="background_image" name="background_image" accept="image/*"/>
+                            <input class="form-control" type="file" id="image" name="image" accept="image/*"/>
                             <div class="form-text">Format: JPG, JPEG, PNG, WEBP. Maksimal 2MB.</div>
-                            @error('background_image')
+                            @error('image')
                               <div class="text-danger mt-1">{{ $message }}</div>
                             @enderror
                           </div>
@@ -90,7 +91,7 @@
             </div>
 
             <script>
-              document.getElementById('background_image').addEventListener('change', function(event) {
+              document.getElementById('image').addEventListener('change', function(event) {
                 const file = event.target.files[0];
                 if (file) {
                   const reader = new FileReader();

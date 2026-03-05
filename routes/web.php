@@ -32,8 +32,8 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/portofolio/edit/{portofolio}', [PortofolioController::class, 'update'])->name('portofolio.update');
     Route::delete('/portofolio/{portofolio}', [PortofolioController::class, 'destroy'])->name('portofolio.destroy');
     
-    Route::get('/hero', [HeroController::class, 'view'])->name('hero.edit');
-    Route::put('/hero/{hero}', [HeroController::class, 'update'])->name('hero.update');
+    Route::get('/hero', [HeroController::class, 'edit'])->name('hero.edit');
+    Route::put('/hero', [HeroController::class, 'update'])->name('hero.update');
 
     Route::get('/service', [ServiceController::class, 'view'])->name('service.index');
     Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');

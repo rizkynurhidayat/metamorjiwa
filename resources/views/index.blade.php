@@ -49,21 +49,22 @@
             <svg class="sparkle sparkle-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.8"/></svg>
             <ul class="hero-kiri" data-aos="fade-up">
                 <li>
-                    <h1 class="hand-font">Temukan Diri Lewat Kata</h1>
+                    <h1 class="hand-font">{{ $hero->heading ?? 'Temukan Diri Lewat Kata' }}</h1>
                 </li>
                 <li class="p-hero">
-                    <p>Berani mengekspresikan pikiran dan perasaanmu,
-                        <br>karena setiap kata adalah cermin jati diri. Lewat kata,
-                        <br>kamu bisa menemukan siapa dirimu sebenarnya.
-                    </p>
+                    <p>{{ $hero->deskripsi ?? '' }}</p>
                 </li>
                 <li>
-                    <button class="but-hero"> Download Template</button>
+                    <button class="but-hero">{{ $hero->button_text ?? 'Download Template' }}</button>
                 </li>
             </ul>
             <ul class="hero-kanan" data-aos="fade-left" data-aos-delay="300">
                 <li>
-                    <img class="floating-book" src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
+                    @if($hero->image && Storage::disk('public')->exists($hero->image))
+                        <img class="floating-book" src="{{ asset('storage/' . $hero->image) }}" width="300" height="300" alt="hero image">
+                    @else
+                        <img class="floating-book" src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
+                    @endif
                 </li>
             </ul>
         </div>
