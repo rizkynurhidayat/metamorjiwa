@@ -7,7 +7,7 @@ use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class HeroController extends Controller
+class ContactController extends Controller
 {
      public function view()
     {
@@ -36,5 +36,15 @@ class HeroController extends Controller
             } 
             $contact->update($validator);
             return redirect()->route('contact.edit')->with('success', 'Berhasil');
-    }
+
+            if ($contact) {
+            // Jika data sudah ada, lakukan update
+            $contact->update($validator);
+            } else {
+            // Jika data masih kosong, buat data baru
+            Contact::create($validator);
+            }
+
+            
+            }
 }

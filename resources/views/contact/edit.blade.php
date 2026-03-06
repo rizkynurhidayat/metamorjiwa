@@ -14,13 +14,13 @@
                       
                     </div>
                     <div class="card-body">
-                      <form action="{{ route('contact.update', $contacts) }}" method="POST" enctype="multipart/form-data">
+                      <form action="{{ route('contact.update', $contact) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="title">Title</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" name="title" value="{{ $contacts->title }}" placeholder="Input title"/>
+                            <input type="text" class="form-control" id="title" name="title" value="{{ $contact->title ?? '' }}" placeholder="Input title"/>
                           </div>
                         </div>
                         
@@ -32,7 +32,7 @@
                                 type="text"
                                 id="tagline"
                                 name="tagline"
-                                value="{{ $contacts->tagline }}"
+                                value="{{ $contact->tagline ?? '' }}"
                                 class="form-control"
                                 placeholder="Input Tagline"
                               />
@@ -48,7 +48,7 @@
                                 type="text"
                                 id="contact"
                                 name="contact"
-                                value="{{ $contacts->contact }}"
+                                value="{{ $contact->contact ?? '' }}"
                                 class="form-control"
                                 placeholder="Input Contact"
                               />
