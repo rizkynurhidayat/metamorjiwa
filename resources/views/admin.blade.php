@@ -8,12 +8,16 @@
                     <div class="d-flex align-items-end row">
                       <div class="col-sm-7">
                         <div class="card-body">
-                          <h5 class="card-title text-primary">Welcome {{$name}} 🎉</h5>
-                          <p class="mb-4">
-                           ini adalah halaman admin, Semoga harimu menyenangkan!
+                          <h5 class="card-title" style="color:#ff5b95; font-weight:600;">Welcome {{$name}} 🎉</h5>
+                          <p class="mb-4" style="color:#b57aa1;">
+                           Ini adalah halaman admin, Semoga harimu menyenangkan!
                           </p>
 
-                          <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                          <a href="javascript:;" 
+                            class="btn btn-sm"
+                            style="border: 2px solid #fd6fa1; color:#b57aa1;">
+                            View Badges
+                          </a>
                         </div>
                       </div>
                       <div class="col-sm-5 text-center text-sm-left">
