@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Portofolio;
-use App\Models\Service;
 use App\Models\Hero;
-use App\Models\Team;
-use App\Models\Message;
+use App\Models\Carousel;
+use App\Models\Testimoni;
+use App\Models\Sample;
+use App\Models\Cta;
+use App\Models\SocialMedia;
 
 
 class HomeController extends Controller
@@ -16,10 +17,10 @@ class HomeController extends Controller
     
     $validator = $request->validate([
         'name' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
-            'message' => 'required|string|max:255',
-            ]);
+        'email' => 'required|string|max:255',
+        'phone' => 'required|string|max:255',
+        'message' => 'required|string|max:255',
+        ]);
 
     $message = Message::create($validator);
 
@@ -29,16 +30,19 @@ class HomeController extends Controller
 
     public function view()
     {
-        $portofolio = Portofolio::all();
-        $message = Message::all();
-        $service = Service::all();
-        $hero = hero::first();
-        $teams = Team::all();
+        $hero = Hero::first();
+        $carousel = Carousel::all();
+        $testimoni = Testimoni::all();
+        $sample = Sample::all();
+        $cta = Cta::all();
+        $socialMedia = SocialMedia::first();
         return view('index', [
-            "portofolio" => $portofolio,
             "hero" => $hero,
-            "service" => $service,
-            "teams" => $teams
+            "carousel" => $carousel,
+            "testimoni" => $testimoni,
+            "sample" => $sample,
+            "cta" => $cta,
+            "socialMedia" => $socialMedia
         ]);
     }
 }
