@@ -20,32 +20,38 @@ class ContactController extends Controller
         ]);
     }
 
-     public function update (Request $request, Contact $contact){
-           $validator = $request->validate([
-             'title' => 'required|string|max:255',
-             'tagline' => 'required|string|max:255',
-             'tagline1' => 'required|string|max:255',
-             'contact' => 'required|string|max:255',
-        ]);
-            if ($request->hasFile('image')){
-                if($contact->image && Storage::disk('public')->exists($contact->image)){
-                    Storage::disk('public')->delete($contact->image);
-                }
-                $imagePath = $request->file('image')->store('contact_images', 'public');
-                $validator['image'] = $imagePath;
-            
-            } 
-            $contact->update($validator);
-            return redirect()->route('contact.edit')->with('success', 'Berhasil');
+     public function update (Request $request){
+    // 1. Validasi request
+    $validator = $request->validate([
+        'title' => 'required|string|max:255',
+        'tagline' => 'required|string|max:255',
+        'tagline1' => 'required|string|max:255',
+        'contact' => 'required|string|max:255',
+    ]);
 
-            if ($contact) {
-            // Jika data sudah ada, lakukan update
-            $contact->update($validator);
-            } else {
-            // Jika data masih kosong, buat data baru
-            Contact::create($validator);
-            }
+    // 2. Ambil data contact pertama dari database
+    $contact = Contact::first();
 
+    // 3. Handle upload file gambar (jika ada)
+    if ($request->hasFile('image')){
+        // Jika data lama ada dan gambarnya ada di storage, hapus gambar lamanya
+        if($contact && $contact->image && Storage::disk('public')->exists($contact->image)){
+            Storage::disk('public')->delete($contact->image);
+        }
+        $imagePath = $request->file('image')->store('contact_images', 'public');
+        $validator['image'] = $imagePath;
+    } 
 
-            }
+    // 4. Update atau Create data
+    if ($contact) {
+        // Jika data sudah ada di database, lakukan update
+        $contact->update($validator);
+    } else {
+        // Jika database masih kosong sama sekali, buat data baru
+        Contact::create($validator);
+    }
+
+    // 5. Kembalikan response di akhir fungsi
+    return redirect()->route('contact.edit')->with('success', 'Berhasil memperbarui data kontak');
+}
 }

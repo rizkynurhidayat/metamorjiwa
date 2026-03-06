@@ -227,8 +227,10 @@
                 <p>{{ $contact->tagline ?? 'Jangan ragu untuk berdiskusi. Klik tombol di bawah untuk memulai ' }}
                     <br>{{ $contact->tagline1 ?? 'percakapan dengan tim kami melalui WhatsApp.' }}
                 </p>
-                <button class="but-hubungi" href="{{ $contact->link ?? '#'}}"><img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami </button>
-            </div>
+                    <a href="{{ $contact?->contact ?? '#' }}" target="_blank" class="but-hubungi" style="display:inline-block; text-decoration:none;">
+                    <img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami 
+                </a>
+             </div>
         </section>
 
         <!-- cta END -->

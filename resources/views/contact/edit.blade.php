@@ -20,7 +20,7 @@
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="title">Title</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="title" name="title" value="{{ $contact }}" placeholder="Input title"/>
+                            <input type="text" class="form-control" id="title" name="title" value="{{ $contact->title }}" placeholder="Input title"/>
                           </div>
                         </div>
                         
@@ -32,7 +32,7 @@
                                 type="text"
                                 id="tagline"
                                 name="tagline"
-                                value="{{ $contact}}"
+                                value="{{ $contact->tagline}}"
                                 class="form-control"
                                 placeholder="Input Tagline"
                               />
@@ -47,7 +47,7 @@
                                 type="text"
                                 id="tagline1"
                                 name="tagline1"
-                                value="{{ $contact }}"
+                                value="{{ $contact->tagline1}}"
                                 class="form-control"
                                 placeholder="Input Tagline1"
                               />
@@ -63,7 +63,7 @@
                                 type="text"
                                 id="contact"
                                 name="contact"
-                                value="{{ $contact }}"
+                                value="{{ $contact->contact }}"
                                 class="form-control"
                                 placeholder="Input Contact"
                               />
