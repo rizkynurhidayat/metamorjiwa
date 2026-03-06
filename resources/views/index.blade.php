@@ -44,23 +44,27 @@
     </a>
     <section>
         <div id="hero">
+            <svg class="sparkle sparkle-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.9"/></svg>
+            <svg class="sparkle sparkle-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.6"/></svg>
+            <svg class="sparkle sparkle-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.8"/></svg>
             <ul class="hero-kiri" data-aos="fade-up">
                 <li>
-                    <h1 class="hand-font">Temukan Diri Lewat Kata</h1>
+                    <h1 class="hand-font">{{ $hero->heading ?? 'Temukan Diri Lewat Kata' }}</h1>
                 </li>
                 <li class="p-hero">
-                    <p>Berani mengekspresikan pikiran dan perasaanmu,
-                        <br>karena setiap kata adalah cermin jati diri. Lewat kata,
-                        <br>kamu bisa menemukan siapa dirimu sebenarnya.
-                    </p>
+                    <p>{{ $hero->deskripsi ?? '' }}</p>
                 </li>
                 <li>
-                    <button class="but-hero"> Download Template</button>
+                    <button class="but-hero">{{ $hero->button_text ?? 'Download Template' }}</button>
                 </li>
             </ul>
             <ul class="hero-kanan" data-aos="fade-left" data-aos-delay="300">
                 <li>
-                    <img src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
+                    @if($hero->image && Storage::disk('public')->exists($hero->image))
+                        <img class="floating-book" src="{{ asset('storage/' . $hero->image) }}" width="300" height="300" alt="hero image">
+                    @else
+                        <img class="floating-book" src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
+                    @endif
                 </li>
             </ul>
         </div>
@@ -79,17 +83,13 @@
                 </ul>
                 <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">>
                     <li>
-                        <h1>Ruang Aman Untuk Menulis</h1>
+                        <h1>{{ $tentang->heading ?? 'Ruang Aman Untuk Menulis' }}</h1>
                     </li>
                     <li>
-                        <h3>Tempat untuk berhenti sejenak dan menulis dengan jujur, tanpa penilaian.</h3>
+                        <h3>{{ $tentang->sub_heading ?? 'Tempat untuk berhenti sejenak dan menulis dengan jujur, tanpa penilaian.' }}</h3>
                     </li>
                     <li>
-                        <p>Setiap halaman hadir bukan untuk mengarahkan, tapi menemani. Kamu bebas menulis dengan caramu
-                            sendiri.
-                            <br>Rapi atau berantakan, penuh atau kosong. Karena proses mengenal diri tidak selalu jelas,
-                            dan itu tidak apa-apa.
-                        </p>
+                        <p>{{ $tentang->deskripsi ?? 'Setiap halaman hadir bukan untuk mengarahkan, tapi menemani. Kamu bebas menulis dengan caramu sendiri. Rapi atau berantakan, penuh atau kosong. Karena proses mengenal diri tidak selalu jelas, dan itu tidak apa-apa.' }}</p>
                     </li>
                 </ul>
             </div>
@@ -102,24 +102,16 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
+                @foreach ( $preview as $preview )
                 <div class="swiper-slide" >
                     <div class="preview-item2">
-                        <img  src="asset/monthly habit tracker.png">
-                        <p class="hand-font">Praktis dan Mudah Diakses</p>
+                        
+                    <img  src="{{ asset('storage/'.$preview->image) }}">
+                    <p class="hand-font">{{ $preview->tagline}}</p>
                     </div>
                 </div>
-                <div class="swiper-slide"> 
-                    <div  class="preview-item2">
-                        <img  src="asset/refleksi diri.png">
-                        <p class="hand-font">Desain Simpel dan Estetik</p>
-                    </div>
-                 </div>
-                 <div class="swiper-slide">
-                     <div  class="preview-item2">
-                        <img  src="asset/weekly palnner.png">
-                        <p class="hand-font">Serbaguna dan Fleksibel</p>
-                    </div>
-                </div>
+                @endforeach
+               
                 
             </div>
             <!-- If we need pagination -->
@@ -138,46 +130,35 @@
 
 <!-- TESTIMONI -->       
 
-    <section id="testimoni">
+    @php
+        $bgImage = $testimonis->first()?->image;
+        $bgUrl = ($bgImage && Storage::disk('public')->exists($bgImage))
+            ? asset('storage/' . $bgImage)
+            : null;
+    @endphp
+    <section id="testimoni" @if($bgUrl) style="background-image: url('{{ $bgUrl }}'); background-size: cover; background-position: center;" @endif>
         <h2 class="hand-font">Ulasan Dari Pelanggan</h2>
 
         <div class="testi-swiper">
             <div class="swiper-wrapper testimoni">
 
+            @foreach ($testimonis as $testimoni)
             <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Menulis jurnal membantuku memahami perasaan yang tadinya sulit dijelaskan.</p>
-                <p class="nama">Robert Dalves</p>
+                <div>
+                    @for ($i = 0; $i < $testimoni->rating; $i++)
+                        ⭐
+                    @endfor
+                </div>
+                <h3>{{ $testimoni->heading }}</h3>
+                <p>{{ $testimoni->sub_heading }}</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                    <p class="nama">{{ $testimoni->name }}</p>
+                    @if($testimoni->profile && Storage::disk('public')->exists($testimoni->profile))
+                        <img src="{{ asset('storage/' . $testimoni->profile) }}" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" alt="profile">
+                    @endif
+                </div>
             </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Setelah menulis, pikiranku terasa lebih ringan dan lebih jujur pada diri sendiri.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Halaman ini jadi tempat aman untuk menumpahkan isi kepala tanpa takut dihakimi.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Aku tidak menemukan jawaban, tapi aku merasa lebih tenang.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
-
-            <div class="swiper-slide testi-card">
-                <img src="asset/bintang5.png" width="100">
-                <h3>Direkomendasikan</h3>
-                <p>Menulis hari ini membuatku sadar bahwa perasaanku valid.</p>
-                <p class="nama">Robert Dalves</p>
-            </div>
+            @endforeach
             
             </div>
 
@@ -200,6 +181,8 @@
                     <h3>Tulis Setiap Lembaran Hidup Anda</h3>
                     <img src="asset/book hover.png" width="300" height="400">
                 </div>
+                <form action="{{ route('message.store') }}" method="POST" id="contactForm" >
+                    @csrf
                 <div class="sampel-card">
                     <div>
                         <img class="butterfly" src="asset/1butterfly.png" width="100" height="100">
@@ -210,15 +193,30 @@
                     </div>
                     <div class="sampel-isi">
                         <label for="name">Nama:</label><br>
-                        <input type="text" placeholder="Your Name">
+                        <input class="form-control" id="name" name="name" type="text" placeholder="Your Name *" required>
+                        @error('name')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                         <label for="email">Email:</label><br>
-                        <input type="text" placeholder="@gmail.com">
+                        <input class="form-control" id="email" name="email" type="email" placeholder="Your Email *" required>
+                        @error('email')
+                        <div class="invalid-feedback">{{$message}}</div>
+                        @enderror
                     </div>
+
+                     @if (session('success'))
+                    <div class="" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                        </div>
+                    </div>
+                    @endif
+
                     <div class="but-sampel">
-                        <button class="but-sampel">Dapatkan Sampel Gratis Sekarang</button>
+                        <button class="but-sampel" id="submitButton" type="submit">Dapatkan Sampel Gratis Sekarang</button>
                     </div>
                 </div>
-
+            </form>   
             </div>
         </section>
         <!-- sampel END -->
@@ -265,8 +263,6 @@
     <p class="akhir">© 2025 Penerbit Metamorjiwa. Didesain dengan ❤️ di Indonesia. Web Developed by Techade.id</p>
     <!-- footer END -->
     <!-- bawah -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 

@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('testimonis', function (Blueprint $table) {
+        Schema::create('previews', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('heading');
-            $table->string('sub_heading');
-            $table->string('name');
-            $table->string('profile');
-            $table->integer('rating');
-            $table->string('image')->nullable();
+            $table->string('tagline');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('testimonis');
+        Schema::dropIfExists('previews');
     }
 };

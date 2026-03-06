@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Preview;
+use App\Models\Service;
 use App\Models\Hero;
-use App\Models\Carousel;
 use App\Models\Testimoni;
-use App\Models\Sample;
-use App\Models\Cta;
-use App\Models\SocialMedia;
+use App\Models\Tentang;
+use App\Models\Message;
 
 
 class HomeController extends Controller
@@ -17,10 +17,8 @@ class HomeController extends Controller
     
     $validator = $request->validate([
         'name' => 'required|string|max:255',
-        'email' => 'required|string|max:255',
-        'phone' => 'required|string|max:255',
-        'message' => 'required|string|max:255',
-        ]);
+            'email' => 'required|string|max:255',
+            ]);
 
     $message = Message::create($validator);
 
@@ -30,19 +28,19 @@ class HomeController extends Controller
 
     public function view()
     {
-        $hero = Hero::first();
-        $carousel = Carousel::all();
-        $testimoni = Testimoni::all();
-        $sample = Sample::all();
-        $cta = Cta::all();
-        $socialMedia = SocialMedia::first();
+        $previews = Preview::all();
+        $testimonis = Testimoni::all();
+        $tentang = Tentang::first();
+        
+        $hero = hero::first();
+        
         return view('index', [
+            "preview" => $previews,
+            "testimonis" => $testimonis,
+            "tentang" => $tentang,
             "hero" => $hero,
-            "carousel" => $carousel,
-            "testimoni" => $testimoni,
-            "sample" => $sample,
-            "cta" => $cta,
-            "socialMedia" => $socialMedia
+            
+            
         ]);
     }
 }

@@ -45,14 +45,25 @@
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-crown" style="color:#ff5b95;"></i>
                 <div data-i18n="Analytics" style="color:#b57aa1;">Head</div>
+                <i class="menu-icon tf-icons bx bx-crown"></i>
+                <div data-i18n="Analytics">Hero</div>
+              </a>
+            </li>
+            <!-- Tentang -->
+             <li class="menu-item {{request()->is('tentang') || request()->is('tentang/*') ? 'active' : ''}}">
+              <a href="{{route('tentang.edit')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-info-circle"></i>
+                <div data-i18n="Analytics">Tentang</div>
               </a>
             </li>
             <!-- Portofolios -->
-             <li class="menu-item {{request()->is('portofolio') || request()->is('portofolio/*') ? 'active' : ''}}">
-              <a href="{{route('portofolio.index')}}" class="menu-link">
+             <li class="menu-item {{request()->is('preview') || request()->is('preview/*') ? 'active' : ''}}">
+              <a href="{{route('preview.index')}}" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-dock-top" style="color:#ff5b95;"></i>
                 <div data-i18n="Analytics" style="color:#b57aa1;">Carousel</div>
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Analytics">Preview</div>
               </a>
             </li>
             <!-- services -->
@@ -64,11 +75,20 @@
               </a>
             </li>
             <!-- Portofolios -->
-             <li class="menu-item {{request()->is('team') || request()->is('team/*') ? 'active' : ''}}">
-              <a href="{{route('team.index')}}" class="menu-link">
+             <li class="menu-item {{request()->is('contact') || request()->is('contact/*') ? 'active' : ''}}">
+              <a href="{{route('contact.edit')}}" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-group" style="color:#ff5b95;"></i>
                 <div data-i18n="Analytics" style="color:#b57aa1;">Sample</div>
+                <i class="menu-icon tf-icons bx bx-group"></i>
+                <div data-i18n="Analytics">Contact</div>
+              </a>
+            </li>
+            <!-- Testimoni -->
+             <li class="menu-item {{request()->is('testimoni') || request()->is('testimoni/*') ? 'active' : ''}}">
+              <a href="{{route('testimoni.index')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-star"></i>
+                <div data-i18n="Analytics">Testimoni</div>
               </a>
             </li>
             <!-- Message-->

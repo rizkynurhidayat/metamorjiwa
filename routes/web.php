@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\PortofolioController;
+use App\Http\Controllers\PreviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\TentangController;
 
 
 // RoutefolioController;
@@ -25,15 +27,18 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/users/{user}', [AdminController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('users.destroy');
 
-    Route::get('/portofolio', [PortofolioController::class, 'view'])->name('portofolio.index');
-    Route::get('/portofolio/create', [PortofolioController::class, 'create'])->name('portofolio.create');
-    Route::post('/portofolio/create', [PortofolioController::class, 'store'])->name('portofolio.store');
-    Route::get('/portofolio/edit/{portofolio}', [PortofolioController::class, 'edit'])->name('portofolio.edit');
-    Route::put('/portofolio/edit/{portofolio}', [PortofolioController::class, 'update'])->name('portofolio.update');
-    Route::delete('/portofolio/{portofolio}', [PortofolioController::class, 'destroy'])->name('portofolio.destroy');
+    Route::get('/preview', [PreviewController::class, 'view'])->name('preview.index');
+    Route::get('/preview/create', [PreviewController::class, 'create'])->name('preview.create');
+    Route::post('/preview/create', [PreviewController::class, 'store'])->name('preview.store');
+    Route::get('/preview/edit/{preview}', [PreviewController::class, 'edit'])->name('preview.edit');
+    Route::put('/preview/edit/{preview}', [PreviewController::class, 'update'])->name('preview.update');
+    Route::delete('/preview/{preview}', [PreviewController::class, 'destroy'])->name('preview.destroy');
     
-    Route::get('/hero', [HeroController::class, 'view'])->name('hero.edit');
-    Route::put('/hero/{hero}', [HeroController::class, 'update'])->name('hero.update');
+    Route::get('/hero', [HeroController::class, 'edit'])->name('hero.edit');
+    Route::put('/hero', [HeroController::class, 'update'])->name('hero.update');
+
+    Route::get('/tentang', [TentangController::class, 'edit'])->name('tentang.edit');
+    Route::put('/tentang', [TentangController::class, 'update'])->name('tentang.update');
 
     Route::get('/service', [ServiceController::class, 'view'])->name('service.index');
     Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');
@@ -42,16 +47,19 @@ Route::middleware(['auth'])->group(function(){
     Route::put('/service/edit/{service}', [ServiceController::class, 'update'])->name('service.update');
     Route::delete('/service/{service}', [ServiceController::class, 'destroy'])->name('service.destroy');
 
-    Route::get('/team', [TeamController::class, 'view'])->name('team.index');
-    Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
-    Route::post('/team/create', [TeamController::class, 'store'])->name('team.store');
-    Route::get('/team/edit/{team}', [TeamController::class, 'edit'])->name('team.edit');
-    Route::put('/team/edit/{team}', [TeamController::class, 'update'])->name('team.update');
-    Route::delete('/team/{team}', [TeamController::class, 'destroy'])->name('team.destroy');
-
+    Route::get('/contact', [ContactController::class, 'view'])->name('contact.edit');
+    Route::put('/contact/{contact}', [ContactController::class, 'update'])->name('contact.update');
+   
     Route::get('/message', [MessageController::class, 'view'])->name('message.index');
     Route::get('/message/view/{message}', [MessageController::class, 'edit'])->name('message.edit');
     Route::delete('/message/{message}', [MessageController::class, 'destroy'])->name('message.destroy');
+
+    Route::get('/testimoni', [TestimoniController::class, 'view'])->name('testimoni.index');
+    Route::get('/testimoni/create', [TestimoniController::class, 'create'])->name('testimoni.create');
+    Route::post('/testimoni/create', [TestimoniController::class, 'store'])->name('testimoni.store');
+    Route::get('/testimoni/edit/{testimoni}', [TestimoniController::class, 'edit'])->name('testimoni.edit');
+    Route::put('/testimoni/edit/{testimoni}', [TestimoniController::class, 'update'])->name('testimoni.update');
+    Route::delete('/testimoni/{testimoni}', [TestimoniController::class, 'destroy'])->name('testimoni.destroy');
     
     });
 
@@ -67,10 +75,7 @@ Route::middleware(['guest'])->group(function(){
     Route::post('/register', [AuthController::class, 'register']);
     
     Route::get('/', [HomeController::class,'view']);
-    Route::post('/message', [HomeController::class, 'store'])->name('message.store');
      
 });
 
-
-
-   
+Route::post('/message', [HomeController::class, 'store'])->name('message.store');
