@@ -60,14 +60,6 @@
                 <div data-i18n="Analytics" style="color:#b57aa1;">Preview</div>
               </a>
             </li>
-            <!-- services -->
-             <li class="menu-item {{request()->is('service') || request()->is('service/*') ? 'active' : ''}}">
-              <a href="{{route('service.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class="menu-icon tf-icons bx bx-message-square-dots me-2" style="color:#ff5b95;"></i>
-                <div data-i18n="Analytics" style="color:#b57aa1;">Testimoni</div>
-              </a>
-            </li>
             <!-- Portofolios -->
              <li class="menu-item {{request()->is('contact') || request()->is('contact/*') ? 'active' : ''}}">
               <a href="{{route('contact.edit')}}" class="menu-link">
