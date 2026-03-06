@@ -42,28 +42,22 @@
             <!-- Portofolios -->
              <li class="menu-item {{request()->is('hero') || request()->is('hero/*') ? 'active' : ''}}">
               <a href="{{route('hero.edit')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-crown" style="color:#ff5b95;"></i>
-                <div data-i18n="Analytics" style="color:#b57aa1;">Head</div>
-                <i class="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Analytics">Hero</div>
+                <div data-i18n="Analytics" style="color:#b57aa1;">Hero</div>
               </a>
             </li>
             <!-- Tentang -->
              <li class="menu-item {{request()->is('tentang') || request()->is('tentang/*') ? 'active' : ''}}">
               <a href="{{route('tentang.edit')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-info-circle"></i>
-                <div data-i18n="Analytics">Tentang</div>
+                <i class="menu-icon tf-icons bx bx-info-circle" style="color:#ff5b95;"></i>
+                <div data-i18n="Analytics" style="color:#b57aa1;">Tentang</div>
               </a>
             </li>
             <!-- Portofolios -->
              <li class="menu-item {{request()->is('preview') || request()->is('preview/*') ? 'active' : ''}}">
               <a href="{{route('preview.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-dock-top" style="color:#ff5b95;"></i>
-                <div data-i18n="Analytics" style="color:#b57aa1;">Carousel</div>
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Analytics">Preview</div>
+                <div data-i18n="Analytics" style="color:#b57aa1;">Preview</div>
               </a>
             </li>
             <!-- services -->
@@ -77,18 +71,15 @@
             <!-- Portofolios -->
              <li class="menu-item {{request()->is('contact') || request()->is('contact/*') ? 'active' : ''}}">
               <a href="{{route('contact.edit')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class="menu-icon tf-icons bx bx-group" style="color:#ff5b95;"></i>
-                <div data-i18n="Analytics" style="color:#b57aa1;">Sample</div>
-                <i class="menu-icon tf-icons bx bx-group"></i>
-                <div data-i18n="Analytics">Contact</div>
+                <div data-i18n="Analytics" style="color:#b57aa1;">Contact</div>
               </a>
             </li>
             <!-- Testimoni -->
              <li class="menu-item {{request()->is('testimoni') || request()->is('testimoni/*') ? 'active' : ''}}">
               <a href="{{route('testimoni.index')}}" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-star"></i>
-                <div data-i18n="Analytics">Testimoni</div>
+                <i class="menu-icon tf-icons bx bx-star" style="color:#ff5b95;"></i>
+                <div data-i18n="Analytics" style="color:#b57aa1;">Testimoni</div>
               </a>
             </li>
             <!-- Message-->

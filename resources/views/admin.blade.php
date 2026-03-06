@@ -15,7 +15,7 @@
 
                           <a href="javascript:;" 
                             class="btn btn-sm"
-                            style="border: 2px solid #ff5b95; color:#b57aa1;">
+                            style="border: 2px solid #fd6fa1; color:#b57aa1;">
                             View Badges
                           </a>
                         </div>
