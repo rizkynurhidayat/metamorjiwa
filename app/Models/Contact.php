@@ -9,6 +9,7 @@ class Contact extends Model
     protected $fillable = [
         'title',
         'tagline',
+        'tagline1',
         'contact',
     ];
 }

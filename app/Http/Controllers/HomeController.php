@@ -7,6 +7,7 @@ use App\Models\Preview;
 use App\Models\Service;
 use App\Models\Hero;
 use App\Models\Testimoni;
+use App\Models\Contact;
 use App\Models\Tentang;
 use App\Models\Message;
 
@@ -32,6 +33,7 @@ class HomeController extends Controller
         $testimonis = Testimoni::all();
         $tentang = Tentang::first();
         
+        $contact = Contact::first();
         $hero = hero::first();
         
         return view('index', [
@@ -39,6 +41,7 @@ class HomeController extends Controller
             "testimonis" => $testimonis,
             "tentang" => $tentang,
             "hero" => $hero,
+            "contact" => $contact,
             
             
         ]);

@@ -24,6 +24,7 @@ class ContactController extends Controller
            $validator = $request->validate([
              'title' => 'required|string|max:255',
              'tagline' => 'required|string|max:255',
+             'tagline1' => 'required|string|max:255',
              'contact' => 'required|string|max:255',
         ]);
             if ($request->hasFile('image')){
@@ -45,6 +46,6 @@ class ContactController extends Controller
             Contact::create($validator);
             }
 
-            
+
             }
 }

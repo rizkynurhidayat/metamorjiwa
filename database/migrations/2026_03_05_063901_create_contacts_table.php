@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
              $table->string('title');
             $table->string('tagline');
+            $table->string('tagline1');
             $table->string('contact');
             $table->timestamps();
         });

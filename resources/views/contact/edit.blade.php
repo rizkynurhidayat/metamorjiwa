@@ -16,7 +16,7 @@
                     <div class="card-body">
                       <form action="{{ route('contact.update', $contact) }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        @method('PUT')
+                        @method('POST')
                         <div class="row mb-3">
                           <label class="col-sm-2 col-form-label" for="title">Title</label>
                           <div class="col-sm-10">
@@ -35,6 +35,21 @@
                                 value="{{ $contact->tagline ?? '' }}"
                                 class="form-control"
                                 placeholder="Input Tagline"
+                              />
+                            </div>
+                            <div class="form-text">You can use letters, numbers & periods</div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="tagline1">Tagline1</label>
+                          <div class="col-sm-10">
+                            <div class="input-group input-group-merge">
+                              <input
+                                type="text"
+                                id="tagline1"
+                                name="tagline1"
+                                value="{{ $contact->tagline1 ?? '' }}"
+                                class="form-control"
+                                placeholder="Input Tagline1"
                               />
                             </div>
                             <div class="form-text">You can use letters, numbers & periods</div>

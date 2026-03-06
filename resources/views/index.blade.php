@@ -223,11 +223,11 @@
         <!-- cta -->
         <section>
             <div id="hubungi">
-                <h2>Tulis Jurnal Anda</h2>
-                <p>Jangan ragu untuk berdiskusi. Klik tombol di bawah untuk memulai
-                    <br>percakapan dengan tim kami melalui WhatsApp.
+                <h2>{{ $contact->title ?? 'Tulis Jurnal Anda' }}</h2>
+                <p>{{ $contact->tagline ?? 'Jangan ragu untuk berdiskusi. Klik tombol di bawah untuk memulai ' }}
+                    <br>{{ $contact->tagline1 ?? 'percakapan dengan tim kami melalui WhatsApp.' }}
                 </p>
-                <button class="but-hubungi"><img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami </button>
+                <button class="but-hubungi" href="{{ $contact->link ?? '#'}}"><img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami </button>
             </div>
         </section>
 
