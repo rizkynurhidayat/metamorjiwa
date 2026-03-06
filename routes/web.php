@@ -48,7 +48,7 @@ Route::middleware(['auth'])->group(function(){
     Route::delete('/service/{service}', [ServiceController::class, 'destroy'])->name('service.destroy');
 
     Route::get('/contact', [ContactController::class, 'view'])->name('contact.edit');
-    Route::put('/contact', [ContactController::class, 'update'])->name('contact.update');
+    Route::put('/contact/{contact}', [ContactController::class, 'update'])->name('contact.update');
    
     Route::get('/message', [MessageController::class, 'view'])->name('message.index');
     Route::get('/message/view/{message}', [MessageController::class, 'edit'])->name('message.edit');

@@ -63,7 +63,6 @@
                     
                        <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <a class="btn btn-secondary" href="{{ route('contact.index') }}">Back</a>
                             <button type="submit" class="btn btn-primary">Send</button>
                           </div>
                         </div>
