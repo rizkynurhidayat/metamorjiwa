@@ -129,21 +129,43 @@ nav {
 
 #hero {
     display: flex;
-    /* TAMBAHKAN KODE DI BAWAH INI */
-    position: fixed; /* Membuat hero diam di tempat */
-    top: 120px; /* Memberi jarak agar tidak nabrak navbar */
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 100px;
     left: 0;
     width: 100%;
-    z-index: 1; /* Layer paling bawah */
-    transform-origin: center top; /* Titik pusat mengecil dari tengah atas */
-    background: transparent; /* Pastikan background hero transparan */
+    height: calc(100vh - 100px);
+    z-index: 1;
+    background: transparent;
+    padding: 0 5% 0 6%;
+    box-sizing: border-box;
+    gap: 20px;
 }
 
 .hero-kiri {
     list-style-type: none;
-    width: 80%;
-    margin: 30px;
-    font-size: 150%;
+    width: 48%;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.hero-kiri h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    color: #423b3f;
+    margin: 0;
+}
+
+.hero-kiri .p-hero p {
+    font-size: 1rem;
+    color: #6b4e71;
+    margin: 0;
+    line-height: 1.6;
 }
 
 .social-proof {
@@ -274,10 +296,18 @@ nav {
 }
 .hero-kanan {
     list-style-type: none;
-    width: 40%;
-    height: auto;
-    margin: 50px;
+    width: 48%;
+    margin: 0;
+    padding: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-kanan li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 .p-hero {
     color: #423b3f;
