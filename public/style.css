@@ -145,6 +145,133 @@ nav {
     margin: 30px;
     font-size: 150%;
 }
+
+.social-proof {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.15);
+    width: fit-content;
+    gap: 15px;
+}
+
+.avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.avatar-group img, 
+.avatar-group .avatar-text {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-left: -12px;
+    object-fit: cover;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.avatar-group img:first-child {
+    margin-left: 0;
+}
+
+.avatar-group .avatar-text {
+    background: #ec4899; /* Pink background */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: sans-serif;
+    z-index: 2;
+}
+
+.proof-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.proof-title {
+    margin: 0 !important;
+    font-size: 14px !important;
+    color: #423b3f !important;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.proof-text .stars {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 2px;
+}
+
+/* --- Kelopak Bunga Programmatic Realistis (Petals) --- */
+.petal-programmatic {
+    position: absolute;
+    pointer-events: none;
+    z-index: 6; /* Di depan kebanyakan elemen, bisa diatur ke z-index: 0 untuk di belakang buku */
+    animation: floatPetalReal 6s ease-in-out infinite alternate;
+    opacity: 0.8;
+}
+
+.css-petal {
+    position: absolute;
+    /* Membentuk kelopak daun/bunga: satu sudut runcing, sisanya membulat */
+    border-radius: 0 50% 50% 50%; 
+    /* Gradasi pink lembut */
+    background: radial-gradient(circle at 30% 30%, #fff0f5 0%, #ffb6c1 60%, #ff69b4 100%);
+    /* Bayangan dalam (inset) untuk efek melengkung & bayangan luar untuk efek melayang */
+    box-shadow: inset -3px -3px 6px rgba(200, 0, 100, 0.15), 
+                3px 5px 10px rgba(236, 72, 153, 0.25);
+    z-index: 2;
+    pointer-events: none;
+    animation: floatUp 5s ease-in-out infinite alternate;
+}
+
+/* Kelopak 1: Kanan Atas (Besar, sedikit blur, paling dekat kamera) */
+.petal-1 { 
+    top: 15%; right: 5%; 
+    width: 45px; height: 45px; 
+    transform: rotate(15deg); 
+    filter: blur(2px);
+    animation-delay: 0s; 
+}
+
+/* Kelopak 2: Kanan Bawah (Kecil, fokus tajam) */
+.petal-2 { 
+    top: 65%; right: 7%; 
+    width: 30px; height: 30px; 
+    transform: rotate(65deg); 
+    animation-delay: 1.5s; 
+}
+
+/* Kelopak 3: Kiri Bawah Buku (Sangat besar, sangat blur, background) */
+.petal-3 { 
+    top: 85%; right: 30%; 
+    width: 60px; height: 60px; 
+    transform: rotate(110deg); 
+    filter: blur(3.5px);
+    animation-delay: 2.5s; 
+    z-index: 0; /* Di belakang buku */
+}
+
+/* Kelopak 4: Kiri Atas Buku (Sedang, fokus tajam) */
+.petal-4 { 
+    top: 30%; right: 35%; 
+    width: 40px; height: 40px; 
+    transform: rotate(-30deg); 
+    animation-delay: 0.8s; 
+}
+
+/* Animasi khusus margin supaya nggak bentrok sama rotasi transform */
+@keyframes floatUp {
+    0% { margin-top: 0px; opacity: 0.85; }
+    100% { margin-top: -25px; opacity: 1; }
+}
 .hero-kanan {
     list-style-type: none;
     width: 40%;
