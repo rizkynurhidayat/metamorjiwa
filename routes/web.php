@@ -6,11 +6,11 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PreviewController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HeroController;
-use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\TentangController;
+use App\Http\Controllers\SocialMediaController;
 
 
 // RoutefolioController;
@@ -40,13 +40,6 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/tentang', [TentangController::class, 'edit'])->name('tentang.edit');
     Route::put('/tentang', [TentangController::class, 'update'])->name('tentang.update');
 
-    Route::get('/service', [ServiceController::class, 'view'])->name('service.index');
-    Route::get('/service/create', [ServiceController::class, 'create'])->name('service.create');
-    Route::post('/service/create', [ServiceController::class, 'store'])->name('service.store');
-    Route::get('/service/edit/{service}', [ServiceController::class, 'edit'])->name('service.edit');
-    Route::put('/service/edit/{service}', [ServiceController::class, 'update'])->name('service.update');
-    Route::delete('/service/{service}', [ServiceController::class, 'destroy'])->name('service.destroy');
-
     Route::get('/contact', [ContactController::class, 'view'])->name('contact.edit');
     Route::put('/contact', [ContactController::class, 'update'])->name('contact.update');
    
@@ -60,6 +53,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/testimoni/edit/{testimoni}', [TestimoniController::class, 'edit'])->name('testimoni.edit');
     Route::put('/testimoni/edit/{testimoni}', [TestimoniController::class, 'update'])->name('testimoni.update');
     Route::delete('/testimoni/{testimoni}', [TestimoniController::class, 'destroy'])->name('testimoni.destroy');
+
+    Route::get('/sosialmedia', [SocialMediaController::class, 'view'])->name('sosialmedia.edit');
+    Route::put('/sosialmedia', [SocialMediaController::class, 'update'])->name('sosialmedia.update');
     
     });
 

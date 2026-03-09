@@ -47,6 +47,12 @@
             <svg class="sparkle sparkle-1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.9"/></svg>
             <svg class="sparkle sparkle-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.6"/></svg>
             <svg class="sparkle sparkle-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#ffffff" opacity="0.8"/></svg>
+            
+            <div class="css-petal petal-1"></div>
+            <div class="css-petal petal-2"></div>
+            <div class="css-petal petal-3"></div>
+            <div class="css-petal petal-4"></div>
+
             <ul class="hero-kiri" data-aos="fade-up">
                 <li>
                     <h1 class="hand-font">{{ $hero->heading ?? 'Temukan Diri Lewat Kata' }}</h1>
@@ -54,8 +60,23 @@
                 <li class="p-hero">
                     <p>{{ $hero->deskripsi ?? '' }}</p>
                 </li>
+
                 <li>
                     <button class="but-hero">{{ $hero->button_text ?? 'Download Template' }}</button>
+                </li>
+
+                <li class="social-proof-container" style="margin-top: 30px;">
+                    <div class="social-proof">
+                        <div class="avatar-group">
+                            <img src="asset/profil.jpg" alt="user 1">
+                            <img src="asset/naila.jpg" alt="user 2">
+                            <div class="avatar-text">+1k</div>
+                        </div>
+                        <div class="proof-text">
+                            <p class="proof-title">Disukai 1000+ Pengguna</p>
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
                 </li>
             </ul>
             <ul class="hero-kanan" data-aos="fade-left" data-aos-delay="300">
@@ -252,9 +273,21 @@
                     </li>
                     <li class="li-foot">
                         <h3>Ikuti Kami</h3>
-                        <img src="asset/instagram.png" width="30" height="30">
-                        <img src="asset/facebook.png" width="30" height="30">
-                        <img src="asset/twitter.png" width="30" height="30">
+                        @if($socialMedia->instagram ?? false)
+                        <a href="{{ $socialMedia->instagram }}" target="_blank">
+                            <img src="asset/instagram.png" width="30" height="30">
+                        </a>
+                        @endif
+                        @if($socialMedia->facebook ?? false)
+                        <a href="{{ $socialMedia->facebook }}" target="_blank">
+                            <img src="asset/facebook.png" width="30" height="30">
+                        </a>
+                        @endif
+                        @if($socialMedia->twitter ?? false)
+                        <a href="{{ $socialMedia->twitter }}" target="_blank">
+                            <img src="asset/twitter.png" width="30" height="30">
+                        </a>
+                        @endif
                     </li>
                 </ul>
             </div>
