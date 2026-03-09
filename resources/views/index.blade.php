@@ -81,7 +81,7 @@
                         <img src="asset/butterfly.png" width="250" height="250">
                     </li>
                 </ul>
-                <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">>
+                <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">
                     <li>
                         <h1>{{ $tentang->heading ?? 'Ruang Aman Untuk Menulis' }}</h1>
                     </li>
