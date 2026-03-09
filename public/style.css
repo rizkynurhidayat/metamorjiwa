@@ -544,6 +544,11 @@ input {
 .li-foot p {
     color: #423b3f;
 }
+.li-foot a {
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 5px;
+}
 .akhir {
     align-items: center;
     text-align: center;

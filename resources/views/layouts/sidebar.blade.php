@@ -86,6 +86,13 @@
                 </div>
               </a>
             </li>
+            <!-- Sosial Media -->
+            <li class="menu-item {{request()->is('sosialmedia') || request()->is('sosialmedia/*') ? 'active' : ''}}">
+              <a href="{{route('sosialmedia.edit')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-share-alt" style="color:#ff5b95;"></i>
+                <div data-i18n="Analytics" style="color:#b57aa1;">Sosial Media</div>
+              </a>
+            </li>
             <!-- Layouts -->
             
           </ul>

@@ -81,7 +81,7 @@
                         <img src="asset/butterfly.png" width="250" height="250">
                     </li>
                 </ul>
-                <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">>
+                <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">
                     <li>
                         <h1>{{ $tentang->heading ?? 'Ruang Aman Untuk Menulis' }}</h1>
                     </li>
@@ -252,9 +252,21 @@
                     </li>
                     <li class="li-foot">
                         <h3>Ikuti Kami</h3>
-                        <img src="asset/instagram.png" width="30" height="30">
-                        <img src="asset/facebook.png" width="30" height="30">
-                        <img src="asset/twitter.png" width="30" height="30">
+                        @if($socialMedia->instagram ?? false)
+                        <a href="{{ $socialMedia->instagram }}" target="_blank">
+                            <img src="asset/instagram.png" width="30" height="30">
+                        </a>
+                        @endif
+                        @if($socialMedia->facebook ?? false)
+                        <a href="{{ $socialMedia->facebook }}" target="_blank">
+                            <img src="asset/facebook.png" width="30" height="30">
+                        </a>
+                        @endif
+                        @if($socialMedia->twitter ?? false)
+                        <a href="{{ $socialMedia->twitter }}" target="_blank">
+                            <img src="asset/twitter.png" width="30" height="30">
+                        </a>
+                        @endif
                     </li>
                 </ul>
             </div>

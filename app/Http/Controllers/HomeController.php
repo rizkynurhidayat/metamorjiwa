@@ -10,6 +10,7 @@ use App\Models\Testimoni;
 use App\Models\Contact;
 use App\Models\Tentang;
 use App\Models\Message;
+use App\Models\SocialMedia;
 
 
 class HomeController extends Controller
@@ -35,6 +36,7 @@ class HomeController extends Controller
         
         $contact = Contact::first();
         $hero = hero::first();
+        $socialMedia = SocialMedia::first();
         
         return view('index', [
             "preview" => $previews,
@@ -42,8 +44,7 @@ class HomeController extends Controller
             "tentang" => $tentang,
             "hero" => $hero,
             "contact" => $contact,
-            
-            
+            "socialMedia" => $socialMedia,
         ]);
     }
 }

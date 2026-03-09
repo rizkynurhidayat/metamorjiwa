@@ -38,7 +38,6 @@
                                 @else
                                     <div class="form-text">You didnt have a picture yet.</div>
                                 @endif
-                            {{-- <span class="badge bg-label-primary me-1">{{ $preview->image }}</span> --}}
                           </td>
                           <td>
                             <div class="dropdown">
