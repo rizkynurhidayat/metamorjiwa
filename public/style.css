@@ -882,20 +882,107 @@ input {
         width: 70%;
     }
     #hero {
-        /* flex-direction: column-reverse;
-        text-align: center; */
         position: fixed;
-        top: 90px;
+        top: 78px;
+        left: 0;
         width: 100%;
+        height: calc(100vh - 78px);
         box-sizing: border-box;
+        padding: 16px 6% 24px;
+
+        /* KUNCI: column — mockup (hero-kanan) di atas, teks (hero-kiri) di bawah */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        overflow: hidden;
     }
+
+    .hero-kanan {
+        order: 1;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-kanan li {
+        justify-content: center;
+        width: 100%;
+    }
+    .floating-book {
+        width: min(210px, 52%);
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Teks — bawah, full width, rata tengah */
+    .hero-kiri {
+        order: 2;
+        width: 100%;
+        margin: 0; padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
     .hero-kiri h1 {
-        font-size: 150%;
+        font-size: 1.45rem;
+        line-height: 1.25;
     }
-    .hero-kiri p {
+
+    .hero-kiri .p-hero p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    /* Social proof */
+    .social-proof {
+        padding: 8px 14px;
+        gap: 10px;
+    }
+
+    .proof-title {
+        font-size: 12px !important;
+    }
+
+    /* Tombol CTA */
+    .but-hero {
+        padding: 12px 28px;
         font-size: 85%;
     }
+
+    /* Sembunyikan kelopak besar agar tidak berantakan */
+    .css-petal { display: none; }
+
+    .petal-1 {
+        display: block;
+        top: 6%; right: 8%; left: auto;
+        width: 20px; height: 20px;
+        transform: rotate(15deg);
+        filter: none;
+        animation-delay: 0s;
+    }
+    .petal-2 {
+        display: block;
+        top: 6%; left: 8%; right: auto;
+        width: 16px; height: 16px;
+        transform: rotate(200deg);
+        animation-delay: 1s;
+    }
+
+    /* Sparkle simpan hanya pojok */
+    .sparkle-2 { display: none; }
+    .sparkle { width: 16px; height: 16px; }
+    .sparkle-1 { top: 15%; left: 5%; }
+    .sparkle-3 { top: 15%; right: 5%; }
+    
+    /* Background-second tetap mulai setelah 1 layar penuh */
     .background-second {
-        margin-top: 90vh; /* Sesuaikan jarak dorong untuk HP */
+        margin-top: 100vh;
     }
 }
+
+
