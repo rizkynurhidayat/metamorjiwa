@@ -33,8 +33,16 @@
                 </li>
             </ul>
         </div>
-
-        <button class="but-nav"> DAPATKAN</button>
+        <div class="container-nav-item">
+        <button class="but-nav">
+            <span>DAPATKAN</span>
+            <div class="book-container-navbar">
+                <img src="{{ asset('asset/refleksi-diri.png') }}" class="book back">
+                <img src="{{ asset('asset/monthly-habit-tracker.png') }}" class="book middle">
+                <img src="{{ asset('asset/book-hover.jpeg') }}" class="book front">
+            </div>
+        </button>
+    </div>
     </nav>
     <!-- navbar END -->
 
@@ -200,7 +208,11 @@
             <div class="sampel-container">
                 <div class="sampel-kiri">
                     <h3>Tulis Setiap Lembaran Hidup Anda</h3>
-                    <img src="asset/book hover.png" width="300" height="400">
+                    <div class="book-container">
+                        <img src="{{ asset('asset/monthly-habit-tracker.png') }}" class="book middle">
+                        <img src="{{ asset('asset/book-hover.jpeg') }}" class="book front">
+                        <img src="{{ asset('asset/refleksi-diri.png') }}" class="book back">
+                    </div>
                 </div>
                 <form action="{{ route('message.store') }}" method="POST" id="contactForm" >
                     @csrf

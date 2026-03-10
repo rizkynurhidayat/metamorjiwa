@@ -110,22 +110,69 @@ nav {
     margin: 15px;
 }
 .but-nav {
-    padding: 10px 20px;
-    width: 20%;
-    height: 80px;
-    border-radius: 10px;
+   display: flex;          /* Biar teks & buku sejajar horizontal */
+    align-items: center;    /* Biar teks & buku rata tengah vertikal */
+    gap: 12px;              /* Jarak antara tulisan "DAPATKAN" dan buku */
+    
     background-color: white;
     border: none;
-    color: #6b4e71;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
     cursor: pointer;
-    font-family: serif;
-    transition: transform 0.2;
+    
+    /* Ukuran & Bentuk: DISAMAKAN DENGAN .nav-kiri */
+    height: 100%;           /* Mengikuti tinggi container-nav-item */
+    padding: 0 20px;
+    border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
+    
+    /* Font: DISAMAKAN DENGAN .p-nav atau menu */
+    color: #6b4e71;
+    font-family: serif;
+    font-size: 18px; 
+    font-weight: 600;
+    
+    transition: transform 0.2s;
 }
+
+.container-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 60px;
+}
+/* --- VERSI NAVBAR (UKURAN IKON) --- */
+.book-container-navbar {
+    position: relative;
+    width: 25px; 
+    height: 35px;
+    flex-shrink: 0;
+}
+
+/* Tetap pakai class .book tapi di dalam container navbar */
+.book-container-navbar .book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    border-radius: 2px;
+}
+
+/* --- Efek Hover Khusus Navbar (Geser Tipis Saja) --- */
+.book-container-navbar:hover .front {
+    transform: translateX(-5px) rotate(-3deg);
+}
+
+.book-container-navbar:hover .middle {
+    transform: translateX(3px) translateY(-2px) rotate(2deg);
+}
+
+.book-container-navbar:hover .back {
+    transform: translateX(8px) translateY(2px) rotate(4deg);
+}
+
+
 
 #hero {
     display: flex;
@@ -592,6 +639,64 @@ nav {
 #sampel {
     padding: 100px 0 0 0;
 }
+
+
+.section-buku {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Nengahin horizontal */
+    padding: 50px 0;
+}
+
+.book-container {
+    position: relative;
+    width: 250px; /* Sesuaikan lebar gambar kamu */
+    height: 330px; /* Sesuaikan tinggi gambar kamu */
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Biar gerakannya halus */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background: white; /* Jaga-jaga kalau gambar transparan */
+}
+
+/* --- Tampilan Awal (Rapi Menumpuk) --- */
+.front { 
+    z-index: 3; 
+}
+.middle { 
+    z-index: 2; 
+    transform: scale(0.98); /* Sedikit lebih kecil biar rapi */
+}
+.back { 
+    z-index: 1; 
+    transform: scale(0.95); 
+}
+
+/* --- Tampilan Pas Kursor Nempel (Mekar Cantik) --- */
+/* Kita pakai jarak geser yang kecil aja biar nggak berantakan */
+.book-container:hover .front {
+    transform: translateX(-25px) rotate(-3deg);
+}
+
+.book-container:hover .middle {
+    transform: translateX(15px) translateY(-10px) rotate(2deg);
+}
+
+.book-container:hover .back {
+    transform: translateX(45px) translateY(5px) rotate(5deg);
+}
+
+
 .sampel-container {
     width: 85%;
     margin: 0 auto;
@@ -602,12 +707,13 @@ nav {
 }
 .sampel-kiri h3 {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    margin-left: 30px;
     color: #6b4e71;
 }
-.sampel-kiri img {
-    margin-left: 60px;
-    margin-bottom: 70px;
+.sampel-kiri {
+    margin-left: 20px;
+    margin-bottom: 100px;
 }
 .sampel-img {
     display: block;
