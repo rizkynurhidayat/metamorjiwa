@@ -58,8 +58,10 @@
             
             <div class="css-petal petal-1"></div>
             <div class="css-petal petal-2"></div>
-            <div class="css-petal petal-3"></div>
+            {{-- <div class="css-petal petal-3"></div> --}}
             <div class="css-petal petal-4"></div>
+            <div class="css-petal petal-5"></div>
+            <div class="css-petal petal-6"></div>
 
             <ul class="hero-kiri" data-aos="fade-up">
                 <li>
@@ -92,7 +94,7 @@
                     @if($hero->image && Storage::disk('public')->exists($hero->image))
                         <img class="floating-book" src="{{ asset('storage/' . $hero->image) }}" width="300" height="300" alt="hero image">
                     @else
-                        <img class="floating-book" src="asset/mockup-bukudantablet.png" width="300" height="300" alt="mockup dari tablet dan buku">
+                        <img class="floating-book" src="asset/mockup-bukudantablet.png"  alt="mockup dari tablet dan buku">
                     @endif
                 </li>
             </ul>

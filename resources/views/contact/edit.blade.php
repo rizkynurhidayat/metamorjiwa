@@ -56,7 +56,7 @@
                         </div>
                     </div>            
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="contact">Link Contact</label>
+                          <label class="col-sm-2 col-form-label" for="contact">Link Whatsapp</label>
                           <div class="col-sm-10">
                             <div class="input-group input-group-merge">
                               <input
