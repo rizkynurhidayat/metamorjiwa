@@ -72,75 +72,104 @@ section {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px 20px 20px;
+    align-items: stretch;       /* nav-kiri & button sama tinggi */
+    padding: 14px 20px;
     border-radius: 15px;
     position: sticky;
     top: 0;
     z-index: 99;
+    gap: 12px;
 }
+
 .nav-kiri {
     background-color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 78%;
-    height: 50%;
+    align-items: center;        /* semua isi vertikal center */
+    flex: 1;                    /* ambil sisa lebar */
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
+    padding: 0 10px 0 0;        /* padding kanan agar menu tidak nempel tepi */
+    overflow: hidden;           /* jaga border-radius tetap rapi */
 }
+
+/* Logo + nama brand */
 .img-p {
     display: flex;
-    height: 50%;
+    align-items: center;        /* logo & teks sejajar vertikal */
     margin: 0;
+    padding: 0;
+    flex-shrink: 0;
 }
+
 .p-nav {
-    justify-content: flex-start;
-    font-size: 24px;
+    font-size: 20px;
     color: #ec4899;
+    margin: 0;
+    white-space: nowrap;
 }
+
 .img-nav {
-    margin: 15px;
+    margin: 12px 10px 12px 15px;
+    display: block;
 }
+
+/* Menu links */
 #ul-nav {
     list-style-type: none;
     display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
+
 .a-nav {
-    text-decoration-line: none;
+    text-decoration: none;
     color: #6b4e71;
+    font-size: 15px;
+    transition: color 0.2s;
 }
+
+.a-nav:hover {
+    color: #ec4899;
+}
+
 .li-nav {
-    margin: 15px;
+    margin: 0 14px;
 }
+
+/* Button DAPATKAN */
+.container-nav-item {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+}
+
 .but-nav {
-   display: flex;          /* Biar teks & buku sejajar horizontal */
-    align-items: center;    /* Biar teks & buku rata tengah vertikal */
-    gap: 12px;              /* Jarak antara tulisan "DAPATKAN" dan buku */
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     background-color: white;
     border: none;
     cursor: pointer;
-    
-    /* Ukuran & Bentuk: DISAMAKAN DENGAN .nav-kiri */
-    height: 100%;           /* Mengikuti tinggi container-nav-item */
-    padding: 0 20px;
+
+    padding: 0 22px;
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
-    
-    /* Font: DISAMAKAN DENGAN .p-nav atau menu */
+
     color: #6b4e71;
     font-family: serif;
-    font-size: 18px; 
+    font-size: 17px;
     font-weight: 600;
-    
-    transition: transform 0.2s;
+    white-space: nowrap;
+
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.container-nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 60px;
+.but-nav:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 12px #423b3f44;
 }
 /* --- VERSI NAVBAR (UKURAN IKON) --- */
 .book-container-navbar {
@@ -984,5 +1013,3 @@ input {
         margin-top: 100vh;
     }
 }
-
-
