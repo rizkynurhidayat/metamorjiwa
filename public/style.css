@@ -6,8 +6,11 @@ body {
 }
 
 .floating-book {
+   
+    
+    width: min(380px, 85%);    
+    height: auto;
     animation: floatUpDown 4s ease-in-out infinite;
-    /* Memberikan efek bayangan glow berwarna pink pada gambar PNG */
     filter: drop-shadow(-10px 15px 15px rgba(236, 72, 153, 0.25));
 }
 @keyframes floatUpDown {
@@ -256,37 +259,54 @@ nav {
 
 /* Kelopak 1: Kanan Atas (Besar, sedikit blur, paling dekat kamera) */
 .petal-1 { 
-    top: 15%; right: 5%; 
+    top: 12%; right: 3%; 
     width: 45px; height: 45px; 
     transform: rotate(15deg); 
     filter: blur(2px);
     animation-delay: 0s; 
 }
 
-/* Kelopak 2: Kanan Bawah (Kecil, fokus tajam) */
+/* Kelopak 2: Kanan tengah bawah mockup */
 .petal-2 { 
-    top: 65%; right: 7%; 
+    top: 70%; right: 4%; 
     width: 30px; height: 30px; 
     transform: rotate(65deg); 
     animation-delay: 1.5s; 
 }
 
-/* Kelopak 3: Kiri Bawah Buku (Sangat besar, sangat blur, background) */
+/* Kelopak 3: Bawah mockup */
 .petal-3 { 
-    top: 85%; right: 30%; 
-    width: 60px; height: 60px; 
+    top: 82%; right: 22%; 
+    width: 55px; height: 55px; 
     transform: rotate(110deg); 
-    filter: blur(3.5px);
+    filter: blur(3px);
     animation-delay: 2.5s; 
-    z-index: 0; /* Di belakang buku */
+    z-index: 0;
 }
 
-/* Kelopak 4: Kiri Atas Buku (Sedang, fokus tajam) */
+/* Kelopak 4: Kiri mockup (batas hero-kiri & hero-kanan) */
 .petal-4 { 
-    top: 30%; right: 35%; 
-    width: 40px; height: 40px; 
+    top: 30%; right: 48%; 
+    width: 35px; height: 35px; 
     transform: rotate(-30deg); 
     animation-delay: 0.8s; 
+}
+
+/* Kelopak 5: Atas tengah mockup — TAMBAH */
+.petal-5 { 
+    top: 10%; right: 28%; 
+    width: 25px; height: 25px; 
+    transform: rotate(200deg); 
+    animation-delay: 1.2s; 
+}
+
+/* Kelopak 6: Kiri bawah mockup — TAMBAH */
+.petal-6 { 
+    top: 65%; right: 46%; 
+    width: 20px; height: 20px; 
+    transform: rotate(-60deg); 
+    filter: blur(1px);
+    animation-delay: 2s; 
 }
 
 /* Animasi khusus margin supaya nggak bentrok sama rotasi transform */
@@ -296,12 +316,13 @@ nav {
 }
 .hero-kanan {
     list-style-type: none;
-    width: 48%;
+    width: 52%;                 /* sedikit lebih lebar biar mockup punya ruang */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 .hero-kanan li {
     display: flex;
