@@ -50,7 +50,7 @@
             
             <div class="css-petal petal-1"></div>
             <div class="css-petal petal-2"></div>
-            <div class="css-petal petal-3"></div>
+            {{-- <div class="css-petal petal-3"></div> --}}
             <div class="css-petal petal-4"></div>
             <div class="css-petal petal-5"></div>
             <div class="css-petal petal-6"></div>
