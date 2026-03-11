@@ -699,7 +699,7 @@ nav {
     padding: 50px 0;
 }
 
-.book-container {
+.buku-container {
     position: relative;
     width: 250px; /* Sesuaikan lebar gambar kamu */
     height: 330px; /* Sesuaikan tinggi gambar kamu */
@@ -707,12 +707,13 @@ nav {
     cursor: pointer;
 }
 
-.book {
+.buku {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
+    margin-left: 40px;
     object-fit: contain;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Biar gerakannya halus */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -734,15 +735,15 @@ nav {
 
 /* --- Tampilan Pas Kursor Nempel (Mekar Cantik) --- */
 /* Kita pakai jarak geser yang kecil aja biar nggak berantakan */
-.book-container:hover .front {
+.buku-container:hover .front {
     transform: translateX(-25px) rotate(-3deg);
 }
 
-.book-container:hover .middle {
+.buku-container:hover .middle {
     transform: translateX(15px) translateY(-10px) rotate(2deg);
 }
 
-.book-container:hover .back {
+.buku-container:hover .back {
     transform: translateX(45px) translateY(5px) rotate(5deg);
 }
 
@@ -756,9 +757,9 @@ nav {
     gap: 60px;
 }
 .sampel-kiri h3 {
-    font-size: 28px;
+    font-size: 20px;
     margin-bottom: 50px;
-    margin-left: 30px;
+    margin-right: 15px;
     color: #6b4e71;
 }
 .sampel-kiri {
@@ -780,6 +781,7 @@ nav {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     justify-content: space-around;
     margin-bottom: 70px;
+    margin-right: 70px;
 }
 .sampel-h2-p {
     color: white;
@@ -821,6 +823,29 @@ input {
     margin-top: -900px;
     margin-bottom: 50px;
 }
+
+.glass-card {
+    background: rgba(252, 194, 203, 0.2);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px 0px 0px 25px;
+    
+    /* Ukuran diperkecil */
+    padding: 30px 20px; 
+    width:600px; /* Lebar lebih ringkas */
+    height: 300px;
+    margin-bottom:70px;
+    margin-left: 70px;
+    margin-right: -60px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
 #hubungi {
     text-align: center;
     align-items: center;
