@@ -74,12 +74,16 @@ nav {
     justify-content: space-between;
     align-items: stretch;       /* nav-kiri & button sama tinggi */
     padding: 14px 20px;
+    align-items: stretch;       /* nav-kiri & button sama tinggi */
+    padding: 14px 20px;
     border-radius: 15px;
     position: sticky;
     top: 0;
     z-index: 99;
     gap: 12px;
+    gap: 12px;
 }
+
 
 .nav-kiri {
     background-color: white;
@@ -87,32 +91,50 @@ nav {
     justify-content: space-between;
     align-items: center;        /* semua isi vertikal center */
     flex: 1;                    /* ambil sisa lebar */
+    align-items: center;        /* semua isi vertikal center */
+    flex: 1;                    /* ambil sisa lebar */
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
+    padding: 0 10px 0 0;        /* padding kanan agar menu tidak nempel tepi */
+    overflow: hidden;           /* jaga border-radius tetap rapi */
     padding: 0 10px 0 0;        /* padding kanan agar menu tidak nempel tepi */
     overflow: hidden;           /* jaga border-radius tetap rapi */
 }
 
 /* Logo + nama brand */
+
+/* Logo + nama brand */
 .img-p {
     display: flex;
+    align-items: center;        /* logo & teks sejajar vertikal */
     align-items: center;        /* logo & teks sejajar vertikal */
     margin: 0;
     padding: 0;
     flex-shrink: 0;
+    padding: 0;
+    flex-shrink: 0;
 }
 
+
 .p-nav {
+    font-size: 20px;
     font-size: 20px;
     color: #ec4899;
     margin: 0;
     white-space: nowrap;
+    margin: 0;
+    white-space: nowrap;
 }
+
 
 .img-nav {
     margin: 12px 10px 12px 15px;
     display: block;
+    margin: 12px 10px 12px 15px;
+    display: block;
 }
+
+/* Menu links */
 
 /* Menu links */
 #ul-nav {
@@ -831,7 +853,7 @@ nav {
     padding: 50px 0;
 }
 
-.book-container {
+.buku-container {
     position: relative;
     width: 250px; /* Sesuaikan lebar gambar kamu */
     height: 330px; /* Sesuaikan tinggi gambar kamu */
@@ -839,12 +861,13 @@ nav {
     cursor: pointer;
 }
 
-.book {
+.buku {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
+    margin-left: 40px;
     object-fit: contain;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Biar gerakannya halus */
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -866,15 +889,15 @@ nav {
 
 /* --- Tampilan Pas Kursor Nempel (Mekar Cantik) --- */
 /* Kita pakai jarak geser yang kecil aja biar nggak berantakan */
-.book-container:hover .front {
+.buku-container:hover .front {
     transform: translateX(-25px) rotate(-3deg);
 }
 
-.book-container:hover .middle {
+.buku-container:hover .middle {
     transform: translateX(15px) translateY(-10px) rotate(2deg);
 }
 
-.book-container:hover .back {
+.buku-container:hover .back {
     transform: translateX(45px) translateY(5px) rotate(5deg);
 }
 
@@ -888,9 +911,9 @@ nav {
     gap: 60px;
 }
 .sampel-kiri h3 {
-    font-size: 28px;
+    font-size: 20px;
     margin-bottom: 50px;
-    margin-left: 30px;
+    margin-right: 15px;
     color: #6b4e71;
 }
 .sampel-kiri {
@@ -912,6 +935,7 @@ nav {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     justify-content: space-around;
     margin-bottom: 70px;
+    margin-right: 70px;
 }
 .sampel-h2-p {
     color: white;
@@ -954,8 +978,33 @@ input {
     margin-bottom: 10px;
 }
 .butterfly {
-    display: block;
+    margin-left: -330px;
+    margin-top: -900px;
+    margin-bottom: 50px;
 }
+
+.glass-card {
+    background: rgba(252, 194, 203, 0.2);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px 0px 0px 25px;
+    
+    /* Ukuran diperkecil */
+    padding: 30px 20px; 
+    width:600px; /* Lebar lebih ringkas */
+    height: 300px;
+    margin-bottom:70px;
+    margin-left: 70px;
+    margin-right: -60px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
 #hubungi {
     text-align: center;
     align-items: center;
@@ -1197,50 +1246,6 @@ input {
     .background-second {
         margin-top: 100vh;
     }
-
-    /* Tentang mobile */
-    .tentang-wrapper {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-    }
-
-    .tentang-gambar {
-        flex: none;
-    }
-
-    .tentang-img-frame {
-        width: 220px;
-        height: 220px;
-    }
-
-    .tentang-butterfly {
-        width: 140px;
-        height: 140px;
-    }
-
-    .tentang-konten h1 {
-        font-size: 1.6rem;
-    }
-
-    .tentang-cards {
-        flex-direction: column;
-        padding: 0 5%;
-    }
-
-    .sampel-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .sampel-card {
-        width: 85%;
-        padding: 40px 24px;
-    }
-
-    .sampel-isi {
-        width: 100%;
-        margin-right: 0;
-    }
 }
+
+

@@ -41,15 +41,15 @@
             </button>
         </div>
         <div class="container-nav-item">
-        <button class="but-nav">
-            <span>DAPATKAN</span>
-            <div class="book-container-navbar">
-                <img src="{{ asset('asset/refleksi-diri.png') }}" class="book back">
-                <img src="{{ asset('asset/monthly-habit-tracker.png') }}" class="book middle">
-                <img src="{{ asset('asset/book-hover.jpeg') }}" class="book front">
-            </div>
-        </button>
-    </div>
+            <button class="but-nav">
+                <span>DAPATKAN</span>
+                <div class="book-container-navbar">
+                    <img src="{{ asset('asset/refleksi-diri.png') }}" class="book back">
+                    <img src="{{ asset('asset/monthly-habit-tracker.png') }}" class="book middle">
+                    <img src="{{ asset('asset/book-hover.jpeg') }}" class="book front">
+                </div>
+            </button>
+        </div>
     </nav>
     <!-- navbar END -->
 
@@ -239,12 +239,14 @@
 <!-- sampel -->
         <section id="sampel">
             <div class="sampel-container">
-                <div class="sampel-kiri">
-                    <h3>Tulis Setiap Lembaran Hidup Anda</h3>
-                    <div class="book-container">
-                        <img src="{{ asset('asset/monthly-habit-tracker.png') }}" class="book middle">
-                        <img src="{{ asset('asset/book-hover.jpeg') }}" class="book front">
-                        <img src="{{ asset('asset/refleksi-diri.png') }}" class="book back">
+                <div class="glass-card">
+                    <div class="sampel-kiri">
+                        <h3>Tulis Setiap Lembaran Hidup Anda</h3>
+                        <div class="buku-container">
+                            <img src="{{ asset('asset/monthly-habit-tracker.png') }}" class="buku middle">
+                            <img src="{{ asset('asset/book-hover.jpeg') }}" class="buku front">
+                            <img src="{{ asset('asset/refleksi-diri.png') }}" class="buku back">
+                        </div>
                     </div>
                 </div>
                 <form action="{{ route('message.store') }}" method="POST" id="contactForm" >
@@ -295,7 +297,7 @@
                 </p>
                     <a href="{{ $contact?->contact ?? '#' }}" target="_blank" class="but-hubungi" style="display:inline-block; text-decoration:none;">
                     <img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami 
-                </a>
+                    </a>
              </div>
         </section>
 
