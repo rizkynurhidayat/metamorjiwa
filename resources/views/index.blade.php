@@ -32,6 +32,8 @@
                     <a class="a-nav" href="#testimoni">Testimoni</a>
                 </li>
             </ul>
+
+           
         </div>
         <div class="container-nav-item">
             <button class="but-nav">
@@ -105,29 +107,53 @@
     <div class="background-second">
 
         <!-- tentang -->
-        <section>
-            <div id="tentang">
-                <ul class="img-tentang" data-aos="zoom-in">
-                    <li>
-                        <img src="asset/butterfly.png" width="250" height="250">
-                    </li>
-                </ul>
-                <ul class="text-tentang" data-aos="fade-up" data-aos-delay="200">
-                    <li>
-                        <h1>{{ $tentang->heading ?? 'Ruang Aman Untuk Menulis' }}</h1>
-                    </li>
-                    <li>
-                        <h3>{{ $tentang->sub_heading ?? 'Tempat untuk berhenti sejenak dan menulis dengan jujur, tanpa penilaian.' }}</h3>
-                    </li>
-                    <li>
-                        <p>{{ $tentang->deskripsi ?? 'Setiap halaman hadir bukan untuk mengarahkan, tapi menemani. Kamu bebas menulis dengan caramu sendiri. Rapi atau berantakan, penuh atau kosong. Karena proses mengenal diri tidak selalu jelas, dan itu tidak apa-apa.' }}</p>
-                    </li>
-                </ul>
+        <section id="tentang">
+            <div class="tentang-wrapper">
+
+                <!-- Kolom kiri: gambar -->
+                <div class="tentang-gambar" data-aos="fade-right">
+                    <div class="tentang-img-frame">
+                        <img src="asset/butterfly.png" alt="butterfly" class="tentang-butterfly">
+                    </div>
+                </div>
+
+                <!-- Kolom kanan: teks -->
+                <div class="tentang-konten" data-aos="fade-up" data-aos-delay="150">
+                    <span class="section-badge">✦ Tentang Kami</span>
+                    <h1>{{ $tentang->heading ?? 'Ruang Aman Untuk Menulis' }}</h1>
+                    <h3>{{ $tentang->sub_heading ?? 'Tempat untuk berhenti sejenak dan menulis dengan jujur, tanpa penilaian.' }}</h3>
+                    <p>{{ $tentang->deskripsi ?? 'Setiap halaman hadir bukan untuk mengarahkan, tapi menemani. Kamu bebas menulis dengan caramu sendiri. Rapi atau berantakan, penuh atau kosong. Karena proses mengenal diri tidak selalu jelas, dan itu tidak apa-apa.' }}</p>
+                </div>
+
+            </div>
+
+            <!-- Feature cards -->
+            <div class="tentang-cards" data-aos="fade-up" data-aos-delay="200">
+                <div class="tentang-card">
+                    <div class="tentang-card-icon">🌸</div>
+                    <h4>Refleksi Diri</h4>
+                    <p>Halaman dirancang untuk membantumu mengenal pikiran dan perasaan lebih dalam.</p>
+                </div>
+                <div class="tentang-card">
+                    <div class="tentang-card-icon">📖</div>
+                    <h4>Habit Tracker</h4>
+                    <p>Catat kebiasaanmu setiap hari dan lihat perubahan nyata dari waktu ke waktu.</p>
+                </div>
+                <div class="tentang-card">
+                    <div class="tentang-card-icon">💜</div>
+                    <h4>Bebas Berekspresi</h4>
+                    <p>Tidak ada aturan baku. Tulis sesuai ritme hidupmu sendiri.</p>
+                </div>
             </div>
         </section>
         <!-- tentang END -->
 
-        <!-- PREVIEW -->
+                <!-- PREVIEW -->
+        <div class="section-heading" data-aos="fade-up" id="preview">
+            <span class="section-badge">✦ Preview</span>
+            <h2>Lihat Isi Halamannya</h2>
+            <p>Setiap desain dibuat dengan penuh perhatian agar nyaman digunakan setiap hari.</p>
+        </div>
 
         <div class="swiper">
             <!-- Additional required wrapper -->
@@ -221,8 +247,8 @@
                 <form action="{{ route('message.store') }}" method="POST" id="contactForm" >
                     @csrf
                 <div class="sampel-card">
-                    <div>
-                        <img class="butterfly" src="asset/1butterfly.png" width="100" height="100">
+                    <div class="butterfly-wrap">
+                        <img class="butterfly" src="asset/1butterfly.png" width="80" height="80">
                     </div>
                     <div class="sampel-h2-p">
                         <h2>Sampel</h2>
@@ -249,7 +275,7 @@
                     </div>
                     @endif
 
-                    <div class="but-sampel">
+                    <div>
                         <button class="but-sampel" id="submitButton" type="submit">Dapatkan Sampel Gratis Sekarang</button>
                     </div>
                 </div>
@@ -264,8 +290,9 @@
                 <p>{{ $contact->tagline ?? 'Jangan ragu untuk berdiskusi. Klik tombol di bawah untuk memulai ' }}
                     <br>{{ $contact->tagline1 ?? 'percakapan dengan tim kami melalui WhatsApp.' }}
                 </p>
-                    <a href="{{ $contact?->contact ?? '#' }}" target="_blank" class="but-hubungi" style="display:inline-block; text-decoration:none;">
-                    <img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami 
+                    <a href="{{ $contact?->contact ?? '#' }}" target="_blank" class="but-hubungi">
+                        <img class="whatsapp-icon" src="{{ asset('asset/whatsapp_icon.png') }}"> 
+                        <span>Hubungi Kami</span>
                     </a>
              </div>
         </section>
@@ -320,9 +347,17 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 1000, /* Durasi animasi 1 detik biar smooth */
-        once: true,     /* Animasi hanya jalan 1x saat pertama kali di-scroll */
-        offset: 100     /* Jarak elemen dari bawah layar sebelum animasi mulai */
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+
+      // Tutup menu saat link diklik
+      ulNav.querySelectorAll('.a-nav').forEach(function (link) {
+        link.addEventListener('click', function () {
+          ulNav.classList.remove('show');
+          menuToggle.classList.remove('open');
+        });
       });
     </script>
 </body>
