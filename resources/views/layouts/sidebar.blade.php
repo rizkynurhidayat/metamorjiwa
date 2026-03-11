@@ -24,16 +24,7 @@
                 <div data-i18n="Analytics" style="color:#b57aa1;">Dashboard</div>
               </a>
             </li>
-
-            <!-- users -->
-             <li class="menu-item {{request()->is('users') || request()->is('users/*') ? 'active' : ''}}">
-              <a href="{{route('users.index')}}" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                  <i class="menu-icon tf-icons bx bx-user me-2" style="color:#ff5b95;"></i>
-                <div data-i18n="Analytics" style="color:#b57aa1;">Users</div>
-              </a>
-            </li>
-
+            
             {{-- pages --}}
 
             <li class="menu-header small text-uppercase">
