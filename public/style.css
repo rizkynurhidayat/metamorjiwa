@@ -1073,17 +1073,7 @@ input {
     transition: all 0.3s ease;
 }
 
-/* Animasi hamburger → X */
-.menu-toggle.open span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-.menu-toggle.open span:nth-child(2) {
-    opacity: 0;
-    transform: scaleX(0);
-}
-.menu-toggle.open span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
+
 
 @media only screen and (max-width: 768px) {
     nav {

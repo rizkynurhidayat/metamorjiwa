@@ -33,12 +33,7 @@
                 </li>
             </ul>
 
-            <!-- Hamburger button (visible on mobile) -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+           
         </div>
         <div class="container-nav-item">
             <button class="but-nav">
@@ -354,15 +349,6 @@
         duration: 1000,
         once: true,
         offset: 100
-      });
-
-      // Hamburger menu toggle
-      const menuToggle = document.getElementById('menuToggle');
-      const ulNav = document.getElementById('ul-nav');
-
-      menuToggle.addEventListener('click', function () {
-        ulNav.classList.toggle('show');
-        menuToggle.classList.toggle('open');
       });
 
       // Tutup menu saat link diklik
