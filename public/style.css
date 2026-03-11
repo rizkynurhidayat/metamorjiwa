@@ -72,75 +72,104 @@ section {
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px 20px 20px;
+    align-items: stretch;       /* nav-kiri & button sama tinggi */
+    padding: 14px 20px;
     border-radius: 15px;
     position: sticky;
     top: 0;
     z-index: 99;
+    gap: 12px;
 }
+
 .nav-kiri {
     background-color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 78%;
-    height: 50%;
+    align-items: center;        /* semua isi vertikal center */
+    flex: 1;                    /* ambil sisa lebar */
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
+    padding: 0 10px 0 0;        /* padding kanan agar menu tidak nempel tepi */
+    overflow: hidden;           /* jaga border-radius tetap rapi */
 }
+
+/* Logo + nama brand */
 .img-p {
     display: flex;
-    height: 50%;
+    align-items: center;        /* logo & teks sejajar vertikal */
     margin: 0;
+    padding: 0;
+    flex-shrink: 0;
 }
+
 .p-nav {
-    justify-content: flex-start;
-    font-size: 24px;
+    font-size: 20px;
     color: #ec4899;
+    margin: 0;
+    white-space: nowrap;
 }
+
 .img-nav {
-    margin: 15px;
+    margin: 12px 10px 12px 15px;
+    display: block;
 }
+
+/* Menu links */
 #ul-nav {
     list-style-type: none;
     display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
+
 .a-nav {
-    text-decoration-line: none;
+    text-decoration: none;
     color: #6b4e71;
+    font-size: 15px;
+    transition: color 0.2s;
 }
+
+.a-nav:hover {
+    color: #ec4899;
+}
+
 .li-nav {
-    margin: 15px;
+    margin: 0 14px;
 }
+
+/* Button DAPATKAN */
+.container-nav-item {
+    display: flex;
+    align-items: stretch;
+    flex-shrink: 0;
+}
+
 .but-nav {
-   display: flex;          /* Biar teks & buku sejajar horizontal */
-    align-items: center;    /* Biar teks & buku rata tengah vertikal */
-    gap: 12px;              /* Jarak antara tulisan "DAPATKAN" dan buku */
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     background-color: white;
     border: none;
     cursor: pointer;
-    
-    /* Ukuran & Bentuk: DISAMAKAN DENGAN .nav-kiri */
-    height: 100%;           /* Mengikuti tinggi container-nav-item */
-    padding: 0 20px;
+
+    padding: 0 22px;
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
-    
-    /* Font: DISAMAKAN DENGAN .p-nav atau menu */
+
     color: #6b4e71;
     font-family: serif;
-    font-size: 18px; 
+    font-size: 17px;
     font-weight: 600;
-    
-    transition: transform 0.2s;
+    white-space: nowrap;
+
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.container-nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    height: 60px;
+.but-nav:hover {
+    transform: translateY(-1px);
+    box-shadow: 0px 4px 12px #423b3f44;
 }
 /* --- VERSI NAVBAR (UKURAN IKON) --- */
 .book-container-navbar {
@@ -162,17 +191,17 @@ nav {
     border-radius: 2px;
 }
 
-/* --- Efek Hover Khusus Navbar (Geser Tipis Saja) --- */
-.book-container-navbar:hover .front {
-    transform: translateX(-5px) rotate(-3deg);
+/* --- Efek Hover: trigger dari button, bukan dari container buku --- */
+.but-nav:hover .book-container-navbar .front {
+    transform: translateX(-6px) rotate(-5deg);
 }
 
-.book-container-navbar:hover .middle {
-    transform: translateX(3px) translateY(-2px) rotate(2deg);
+.but-nav:hover .book-container-navbar .middle {
+    transform: translateX(4px) translateY(-3px) rotate(3deg);
 }
 
-.book-container-navbar:hover .back {
-    transform: translateX(8px) translateY(2px) rotate(4deg);
+.but-nav:hover .book-container-navbar .back {
+    transform: translateX(10px) translateY(3px) rotate(6deg);
 }
 
 
@@ -394,18 +423,150 @@ nav {
     font-size: 90%;
     font-family: serif;
 }
+/* ===== SECTION TENTANG ===== */
 #tentang {
+    padding: 80px 6% 60px;
 }
-.text-tentang {
-    list-style-type: none;
-    text-align: center;
+
+.tentang-wrapper {
+    display: flex;
     align-items: center;
-    font-size: 140%;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
-.img-tentang {
-    list-style-type: none;
-    margin-bottom: -200px;
+
+.tentang-gambar {
+    flex: 0 0 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.tentang-img-frame {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle at 40% 40%, #fff0f5, #ffd6e8);
+    border-radius: 60% 40% 55% 45% / 50% 45% 55% 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(236, 72, 153, 0.15);
+    animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.tentang-butterfly {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.tentang-konten {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.tentang-konten h1 {
+    font-size: 2.2rem;
+    color: #423b3f;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.tentang-konten h3 {
+    font-size: 1.1rem;
+    color: #ec4899;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tentang-konten p {
+    font-size: 1rem;
+    color: #6b4e71;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Section badge label */
+.section-badge {
+    display: inline-block;
+    background: linear-gradient(to right, #fce7f3, #ede9fe);
+    color: #ec4899;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+/* Feature cards */
+.tentang-cards {
+    display: flex;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 50px auto 0;
+    padding: 0 6%;
+}
+
+.tentang-card {
+    flex: 1;
+    background: white;
+    border: 1px solid #fce7f3;
+    border-radius: 24px;
+    padding: 30px 24px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(236, 72, 153, 0.07);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tentang-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(236, 72, 153, 0.15);
+}
+
+.tentang-card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.tentang-card h4 {
+    font-size: 1.05rem;
+    color: #423b3f;
+    margin: 0 0 8px;
+}
+
+.tentang-card p {
+    font-size: 0.9rem;
+    color: #6b4e71;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== SECTION HEADING (reusable) ===== */
+.section-heading {
+    text-align: center;
+    padding: 70px 6% 0;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+    color: #423b3f;
+    margin: 8px 0;
+}
+
+.section-heading p {
+    font-size: 1rem;
+    color: #6b4e71;
+    line-height: 1.6;
+    margin: 0;
+}
+
 #preview {
     padding: 80px 0;
 }
@@ -787,10 +948,13 @@ input {
     outline: none;
     justify-content: space-between;
 }
+.butterfly-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
 .butterfly {
-    margin-left: -330px;
-    margin-top: -900px;
-    margin-bottom: 50px;
+    display: block;
 }
 #hubungi {
     text-align: center;
@@ -838,49 +1002,107 @@ input {
     text-align: center;
 }
 
-.menu-nav {
+.menu-toggle {
     display: none;
-    font-size: 32px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
     cursor: pointer;
-    color: #6b4e71;
-    margin-right: 15px;
+    padding: 8px;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    flex-shrink: 0;
 }
 
-@media only screen and (max-width: 600px) {
-    .nav {
-        align-items: center;
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #6b4e71;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Animasi hamburger → X */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media only screen and (max-width: 768px) {
+    nav {
+        padding: 10px 14px;
+        gap: 8px;
+        align-items: stretch;
     }
-    .li-nav {
-        display: none;
+
+    .container-nav-item {
+        align-items: stretch;
+        flex-shrink: 0;
     }
+
+    .nav-kiri {
+        flex: 1;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Sembunyikan menu link di mobile by default */
     #ul-nav {
         display: none;
         position: absolute;
-        top: 90px;
+        top: calc(100% + 8px);
         left: 0;
         width: 100%;
         background-color: white;
         flex-direction: column;
         text-align: center;
-        padding: 20px 0;
-        border-radius: 0 0 20px 20px;
-        z-index: 99;
+        padding: 16px 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 6px 20px rgba(66, 59, 63, 0.12);
+        z-index: 100;
     }
+
     #ul-nav.show {
         display: flex;
     }
+
     .li-nav {
-        margin: 12px 0;
+        margin: 10px 0;
     }
+
+    .a-nav {
+        font-size: 16px;
+    }
+
+    /* Button DAPATKAN di mobile: sama seperti desktop */
     .but-nav {
-        width: 25%;
-        height: auto;
-        padding: 10px 16px;
-        font-size: 14px;
+        padding: 0 18px;
+        font-size: 15px;
+        gap: 10px;
+        height: 100%;
+        min-height: 52px;
     }
-    .nav-kiri {
-        width: 70%;
+
+    .book-container-navbar {
+        width: 22px;
+        height: 32px;
     }
+
+    .but-nav span {
+        display: inline; /* Tetap tampilkan teks DAPATKAN */
+    }
+
     #hero {
         position: fixed;
         top: 78px;
@@ -889,8 +1111,6 @@ input {
         height: calc(100vh - 78px);
         box-sizing: border-box;
         padding: 16px 6% 24px;
-
-        /* KUNCI: column — mockup (hero-kanan) di atas, teks (hero-kiri) di bawah */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -916,7 +1136,6 @@ input {
         margin: 0 auto;
     }
 
-    /* Teks — bawah, full width, rata tengah */
     .hero-kiri {
         order: 2;
         width: 100%;
@@ -938,7 +1157,6 @@ input {
         line-height: 1.5;
     }
 
-    /* Social proof */
     .social-proof {
         padding: 8px 14px;
         gap: 10px;
@@ -948,13 +1166,11 @@ input {
         font-size: 12px !important;
     }
 
-    /* Tombol CTA */
     .but-hero {
         padding: 12px 28px;
         font-size: 85%;
     }
 
-    /* Sembunyikan kelopak besar agar tidak berantakan */
     .css-petal { display: none; }
 
     .petal-1 {
@@ -973,16 +1189,58 @@ input {
         animation-delay: 1s;
     }
 
-    /* Sparkle simpan hanya pojok */
     .sparkle-2 { display: none; }
     .sparkle { width: 16px; height: 16px; }
     .sparkle-1 { top: 15%; left: 5%; }
     .sparkle-3 { top: 15%; right: 5%; }
     
-    /* Background-second tetap mulai setelah 1 layar penuh */
     .background-second {
         margin-top: 100vh;
     }
+
+    /* Tentang mobile */
+    .tentang-wrapper {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .tentang-gambar {
+        flex: none;
+    }
+
+    .tentang-img-frame {
+        width: 220px;
+        height: 220px;
+    }
+
+    .tentang-butterfly {
+        width: 140px;
+        height: 140px;
+    }
+
+    .tentang-konten h1 {
+        font-size: 1.6rem;
+    }
+
+    .tentang-cards {
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .sampel-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .sampel-card {
+        width: 85%;
+        padding: 40px 24px;
+    }
+
+    .sampel-isi {
+        width: 100%;
+        margin-right: 0;
+    }
 }
-
-
