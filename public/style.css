@@ -445,6 +445,17 @@ nav {
     font-size: 90%;
     font-family: serif;
 }
+
+.but-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+    filter: brightness(1.1);
+}
+
+.but-hero:active {
+    transform: translateY(-1px);
+}
+
 /* ===== SECTION TENTANG ===== */
 #tentang {
     padding: 80px 6% 60px;
@@ -945,7 +956,7 @@ nav {
 }
 .but-sampel {
     display: inline-block;
-    padding: 7px 25px;
+    padding: 10px 46px;
     background: linear-gradient(to right, #ec4899, #a855f7);
     color: white;
     text-decoration: none;
@@ -956,7 +967,22 @@ nav {
     border: none;
     font-size: 100%;
     font-family: serif;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 2px;
+    margin-top: 3px;
 }
+
+.but-sampel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+    filter: brightness(1.1);
+}
+
+.but-sampel:active {
+    transform: translateY(-1px);
+}
+
 .sampel-isi {
     color: white;
     width: 300px;
@@ -1013,20 +1039,44 @@ input {
 }
 
 .but-hubungi {
-    display: inline-block;
-    padding: 15px 40px;
+    display: inline-flex; /* Ganti ke inline-flex agar align-items bekerja */
+    align-items: center;  /* Nengahin ikon & teks secara vertikal */
+    justify-content: center;
+    padding: 12px 30px;   /* Padding lebih proporsional */
     background: linear-gradient(to right, #ec4899, #a855f7);
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
-    transition: transform 0.2s;
+    font-weight: 600;
+    border-radius: 50px;  /* Bentuk kapsul lebih estetik untuk tombol WA */
+    
+    /* Shadow lebih lembut dan menyebar */
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3); 
+    
+    /* Ganti font ke sans-serif agar lebih modern */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    transition: all 0.3s ease;
     border: none;
-    font-size: 90%;
-    font-family: serif;
 }
+
+.whatsapp-icon {
+    width: 24px;   /* Ukuran sedikit diperkecil agar tidak mendominasi */
+    height: 24px;
+    margin-right: 12px;
+    display: block; /* Agar tidak terpengaruh line-height teks */
+}
+
+/* Efek Hover (Penting biar bagus!) */
+.but-hubungi:hover {
+    transform: translateY(-3px); /* Tombol sedikit naik */
+    box-shadow: 0 15px 25px rgba(168, 85, 247, 0.4);
+    filter: brightness(1.1); /* Sedikit lebih terang saat di-hover */
+}
+
+.but-hubungi:active {
+    transform: translateY(-1px);
+}
+
 #foot {
     padding: 100px 0 0 0;
 }

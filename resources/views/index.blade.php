@@ -275,7 +275,7 @@
                     </div>
                     @endif
 
-                    <div class="but-sampel">
+                    <div>
                         <button class="but-sampel" id="submitButton" type="submit">Dapatkan Sampel Gratis Sekarang</button>
                     </div>
                 </div>
@@ -290,8 +290,9 @@
                 <p>{{ $contact->tagline ?? 'Jangan ragu untuk berdiskusi. Klik tombol di bawah untuk memulai ' }}
                     <br>{{ $contact->tagline1 ?? 'percakapan dengan tim kami melalui WhatsApp.' }}
                 </p>
-                    <a href="{{ $contact?->contact ?? '#' }}" target="_blank" class="but-hubungi" style="display:inline-block; text-decoration:none;">
-                    <img src="asset/whatsapp_icon.png" width="20" height="20"> Hubungi Kami 
+                    <a href="{{ $contact?->contact ?? '#' }}" target="_blank" class="but-hubungi">
+                        <img class="whatsapp-icon" src="{{ asset('asset/whatsapp_icon.png') }}"> 
+                        <span>Hubungi Kami</span>
                     </a>
              </div>
         </section>
