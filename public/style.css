@@ -805,42 +805,51 @@ nav {
 }
 
 #testimoni {
-    padding: -100px 0 0 0;
+    padding: 0;                          /* fix: padding: -100px tidak valid */
     text-align: center;
     background-image: url(asset/foto-testimoni.png);
+    background-size: cover;              /* tambah agar foto tidak terpotong */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin-top: 50px;
 }
+
 #testimoni h2 {
-    padding: 100px 0 0 0;
+    padding: 80px 6% 0;                  /* fix: pisah dari section padding */
     color: white;
-    font-size: 300%;
+    font-size: clamp(1.8rem, 5vw, 3rem); /* fix: 300% tidak responsif di HP */
+    margin: 0;
 }
+
 /* WRAPPER */
 .testi-swiper {
     width: 100%;
     max-width: 1100px;
     margin: 40px auto 0;
-    padding: 40px 0 60px;
+    padding: 40px 0 80px;               /* tambah bottom agar pagination tidak menempel */
 }
 
 /* CARD DASAR */
 .testi-card {
-    max-width: 240px; /* ⬅️ KECILIN LEBAR */
-    padding: 16px; /* ⬅️ KECILIN DALAMNYA */
+    max-width: 240px;
+    padding: 16px;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 192, 203, 0.5);
     text-align: left;
     transition: 0.4s ease;
     opacity: 0.35;
-    transform: scale(0.8); /* ⬅️ NON-AKTIF LEBIH KECIL */
-    max-height: 220px;
+    transform: scale(0.8);
+    max-height: none;                    /* fix: max-height: 220px bisa memotong konten */
+    box-sizing: border-box;
 }
 
-/* TENGAH (AKTIF) */
-.testi-swiper .swiper-slide-active {
-    background: #ffffff;
-    opacity: 1;
-    transform: scale(1);
+/* TENGAH (AKTIF) — fix: pakai tanpa spasi karena ada di elemen yang sama */
+.testi-swiper .swiper-slide-active.testi-card {
+    background: #ffffff !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
 }
 
 /* PANAH */
@@ -850,6 +859,10 @@ nav {
 }
 
 /* INDIKATOR GARIS */
+.testi-swiper .swiper-pagination {
+    bottom: 24px !important;             /* fix: tidak menempel konten */
+}
+
 .testi-swiper .swiper-pagination-bullet {
     width: 60px;
     height: 6px;
@@ -1429,5 +1442,41 @@ input {
     .swiper-button-prev::after,
     .swiper-button-next::after {
         font-size: 13px !important;
+    }
+
+    #testimoni h2 {
+        padding: 50px 5% 0;
+        font-size: 1.7rem;
+    }
+
+    .testi-swiper {
+        margin-top: 20px;
+        padding: 20px 0 70px;
+    }
+
+    .testi-card {
+        max-width: 200px;
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .testi-swiper .swiper-button-prev,
+    .testi-swiper .swiper-button-next {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .testi-swiper .swiper-button-prev::after,
+    .testi-swiper .swiper-button-next::after {
+        font-size: 13px !important;
+    }
+
+    .testi-swiper .swiper-pagination-bullet {
+        width: 36px;                     /* lebih kecil agar muat di layar kecil */
+        height: 5px;
+    }
+
+    .akhir {
+        font-size: 0.9rem;
     }
 }
