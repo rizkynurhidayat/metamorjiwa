@@ -153,10 +153,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                    <label class="form-check-label" for="remember-me"> Remember Me </label>
-                  </div>
+                 
                 
                   @error('password')
                       <p class="text-danger">{{ $message }}</p>
@@ -166,15 +163,6 @@
                   <button class="btn btn-primary d-grid w-100" type="submit" style="background-color: #F8BBD0 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">Sign in</button>
                 </div>
               </form>
-
-            
-              <p class="text-center">
-                <span>New on our platform?</span>
-                 <a href="/register">
-                  <span style="color: #fc89b1 !important;">Create an account</span>
-                </a>
-               
-              </p>
             </div>
           </div>
           <!-- /Register -->
