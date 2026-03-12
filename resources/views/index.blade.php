@@ -5,7 +5,7 @@
      <link rel="icon" type="image/x-icon" href="asset/logo-metamorjiwa.png" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belajar HTML</title>
+    <title>Metamorjiwa Journal</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
@@ -67,7 +67,7 @@
     <!-- navbar END -->
 
     <!-- hero section -->
-    <a href="" class="whasap" target="_blank">
+    <a href="{{ $contact?->contact ?? '#' }}" class="whasap" target="_blank">
         <img src="asset/whatsapp_icon.png" width="50" height="50" alt="icon whatsapp">
     </a>
     <section>
