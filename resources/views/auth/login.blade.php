@@ -163,7 +163,8 @@
                   @enderror 
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit" style="background-color: #F8BBD0 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit" style="background-color: #ff88b2 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
+                    Sign in</button>
                 </div>
               </form>
 

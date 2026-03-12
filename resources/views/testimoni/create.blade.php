@@ -81,10 +81,10 @@
 
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <a class="btn btn-secondary" href="{{ route('preview.index') }}" style="background-color: #fd68f1 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
+                            <a class="btn btn-secondary" href="{{ route('testimoni.index') }}" style="background-color: #676469 !important; border-color: #676469 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
                               Back
                             </a>
-                            <button type="submit" class="btn btn-primary" style="background-color: #F8BBD0 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
+                            <button type="submit" class="btn btn-primary" style="background-color: #ff88b2 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
                               Send
                             </button>
                           </div>

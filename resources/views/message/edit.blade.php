@@ -48,10 +48,12 @@
                     <form action="{{ route('message.destroy', $message) }}" method="POST">
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <a class="btn btn-secondary" href="{{ route('message.index') }}">Back</a>
+                            <a class="btn btn-secondary" href="{{ route('message.index') }}" style="background-color: #676469 !important; border-color: #676469 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
+                              Back
+                            </a>
                                   @csrf
                                   @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-danger" style="background-color: #f82424ce !important;">Delete</button>
                           </div>
                         </form>
                         </div>
