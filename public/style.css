@@ -582,7 +582,7 @@ nav {
 /* ===== SECTION HEADING (reusable) ===== */
 .section-heading {
     text-align: center;
-    padding: 70px 6% 0;
+    padding: 70px 5% 0;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -600,164 +600,173 @@ nav {
     margin: 0;
 }
 
+/* ===== SECTION PREVIEW (REVAMPED) ===== */
 #preview {
-    padding: 80px 0;
+    padding: 0 0 30px 0;
 }
-.preview-card {
-    background-color: #f8a9c4;
-    width: 85%;
-    margin: 0 auto;
-    padding: 60px 40px;
-    border-radius: 40px;
-    text-align: center;
-    position: relative;
-}
-.fototext-preview {
-    list-style-type: none;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-}
-.arrow {
-    width: 40px;
-    height: 40px;
-    stroke: white;
-    fill: none;
-    stroke-width: 3;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-.arrow:hover {
-    transform: scale(1.15);
-}
-.preview-viewport {
-    width: 360px;
-    overflow: hidden;
-}
-.preview-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-.preview-item {
-    min-width: 360px;
-    text-align: center;
-    opacity: 0.5;
-    transform: scale(0.9);
-    transition: 0.4s;
-}
-.preview-item.active {
-    opacity: 1;
-    transform: scale(1);
-}
-.preview-item img {
-    width: 100%;
-}
-.preview-indicator {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-.dot {
-    width: 30px;
-    height: 4px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    opacity: 0.6;
-    transition: 0.3s;
-}
-.dot.active {
-    background-color: #ff5fa2;
-    opacity: 1;
-}
-
-/* .swiper {
-    width: 80vw;
-    height: 800px;
-}
-.swiper-slide{
-    padding-left: 10%;
-    background-color: #ff5fa2;
-    
-} */
-
-/* .swiper {
-  width: 100vw;
-  height: 400px;
-}
-.swiper-wrapper {
-    align-items: center;
-}
-.swiper-slide {
-    width: 400px !important; PENTING 
-    height: 600px !important;
-} */
 
 .swiper {
-    width: 100%;
-    height: 400px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    /*card pink*/
-    background-color: #f8a9c4;
-    width: 85%;
-    margin: 0 auto;
-    padding: 60px 40px;
-    border-radius: 40px;
-    text-align: center;
+    /* Reset override yang bentrok */
+    width: 88%;
+    max-width: 1100px;
+    height: auto;
+    min-height: 0;
+    padding: 50px 5px 90px;
+
+    margin: 10px auto 0;
+
+    border-radius: 36px;
+
+    /* Gradient lembut lebih elegan dari flat pink */
+    background: linear-gradient(135deg, #ffb6d9 0%, #f9a0c4 50%, #f0829e 100%);
+    box-shadow:
+        0 20px 60px rgba(236, 72, 153, 0.25),
+        inset 0 1px 0 rgba(255,255,255,0.35);
+
     position: relative;
-    height: 550px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Dekorasi bintik cahaya di background card */
+.swiper::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+}
+.swiper::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 160px; height: 160px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
 }
 
 .swiper-wrapper {
-    padding: 70px 0px 0px 10px;
+    padding: 20px 0 10px;
+    align-items: center;    /* slide non-aktif lebih pendek → center biar rapi */
 }
 
 .swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px !important;
-    /* height: 300px !important; */
+    /* Biarkan swiper JS yang atur width via centeredSlides */
+    width: 260px !important;
+    height: auto !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    opacity: 0.5;
+    transform: scale(0.88);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.swiper-slide img {
-    display: block;
+.swiper-slide-active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* Satu level sebelum/sesudah aktif agak terlihat */
+.swiper-slide-prev,
+.swiper-slide-next {
+    opacity: 0.7 !important;
+    transform: scale(0.94) !important;
+}
+
+.preview-item2 {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
 }
 
-/* slide aktif (tengah) */
-/* .swiper-slide-active {
-  transform: scale(1.15);
-  z-index: 2;
-} */
+.preview-item2 img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    border-radius: 16px;
 
-/* slide kiri & kanan */
+    /* Bingkai seperti buku */
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.18),
+        0 2px 8px rgba(0,0,0,0.10),
+        inset 0 0 0 1px rgba(255,255,255,0.15);
+
+    transition: box-shadow 0.4s ease;
+}
+
+.swiper-slide-active .preview-item2 img {
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.28),
+        0 4px 12px rgba(0,0,0,0.12);
+}
+
+.preview-item2 p {
+    text-align: center;
+    color: #fff;
+    font-family: "Patrick Hand", cursive;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* ── Tombol navigasi ── */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #e2005e !important;
-    opacity: 0.6;
-    transform: scale(0.9);
+    color: #fff !important;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 50%;
+    width: 44px !important;
+    height: 44px !important;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.25s, transform 0.25s;
 }
 
-/* .swiper-button-prev.preview{
-    left: 10vw !important;
+.swiper-button-prev { left: 16px; }
+.swiper-button-next { right: 16px; }
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    background: rgba(255,255,255,0.42);
+    transform: translateY(-50%) scale(1.08);
 }
-.swiper-button-next.preview{
-    right: 10vw !important;
-} */
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 16px !important;
+    font-weight: 700;
+}
+
+/* ── Pagination ── */
+.swiper-pagination {
+    bottom: 24px !important;
+}
 
 .swiper-pagination-bullet {
-    background: #f9a8d4;
-    opacity: 0.5;
+    width: 28px !important;
+    height: 4px !important;
+    border-radius: 4px !important;
+    background: rgba(255,255,255,0.5) !important;
+    opacity: 1 !important;
+    transition: background 0.3s, width 0.3s;
 }
 
 .swiper-pagination-bullet-active {
-    background: #e2005e !important;
-    opacity: 1;
+    background: #fff !important;
+    width: 44px !important;
 }
-*/
-
 
 
 
@@ -782,6 +791,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-bottom: 10px;
 }
 
 .preview-item2 img {
@@ -791,6 +801,7 @@ nav {
 
 .preview-item2 p {
     text-align: center;
+    margin-bottom: 15px;
 }
 
 #testimoni {
@@ -1392,5 +1403,31 @@ input {
     }
     .footer a {
         font-size: 0.9rem;
+    }
+
+    .swiper {
+        width: 92%;
+        padding: 36px 8px 60px;
+        border-radius: 28px;
+    }
+
+    .swiper-slide {
+        width: 210px !important;
+    }
+
+    .preview-item2 img {
+        max-width: 190px;
+        border-radius: 12px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 36px !important;
+        height: 36px !important;
+    }
+
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+        font-size: 13px !important;
     }
 }
