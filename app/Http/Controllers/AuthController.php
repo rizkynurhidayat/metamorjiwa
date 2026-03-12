@@ -27,7 +27,7 @@ class AuthController extends Controller
         }
         //gagal login
         return back()->withErrors([
-            'email' => 'email dan password tidak sesuai'
+            'email' => 'email atau password tidak sesuai'
         ]);
     }
 
@@ -38,27 +38,7 @@ class AuthController extends Controller
         return redirect('/login')->with('success', 'Anda telah logout');
     }
 
-    public function showRegisterForm()
-        {
-            return view('auth.register');
-        }
+    
 
-    public function register(Request $request)
-    {
-        // Validasi input dari user
-        $validator = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
-        ]);
-
-        $user = User::create([
-            'name' => $validator['name'],
-            'email' => $validator['email'],
-            'password' => Hash::make($validator['password']),
-        ]);
-
-        return redirect('/login')->with('success', 'Registrasi berhasil! Silakan login.');
-
-    }    
+    
 } 

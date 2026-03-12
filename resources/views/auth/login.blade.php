@@ -153,10 +153,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="remember-me" />
-                    <label class="form-check-label" for="remember-me"> Remember Me </label>
-                  </div>
+                 
                 
                   @error('password')
                       <p class="text-danger">{{ $message }}</p>
@@ -167,15 +164,6 @@
                     Sign in</button>
                 </div>
               </form>
-
-            
-              <p class="text-center">
-                <span>New on our platform?</span>
-                 <a href="/register">
-                  <span style="color: #fc89b1 !important;">Create an account</span>
-                </a>
-               
-              </p>
             </div>
           </div>
           <!-- /Register -->
