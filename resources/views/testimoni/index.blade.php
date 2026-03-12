@@ -10,7 +10,8 @@
               <div class="card">
                <div class="card-header d-flex align-items-center justify-content-between">
                   <h5 class="card-header">Testimoni Data</h5>
-                    <a class="btn btn-primary" href="{{ route ('testimoni.create') }}">Add Testimoni</a>
+                    <a class="btn btn-primary" href="{{ route ('preview.create') }}" style="background-color: #F8BBD0 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
+                      Add Testimoni</a>
                 </div>
                 <div class="table-responsive text-nowrap">
                   <table class="table table-hover">

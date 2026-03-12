@@ -57,7 +57,9 @@
 
                         <div class="row justify-content-end">
                           <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+                            <button type="submit" class="btn btn-primary" style="background-color: #F8BBD0 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">
+                                Simpan Perubahan
+                            </button>
                           </div>
                         </div>
                       </form>

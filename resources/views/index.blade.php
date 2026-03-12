@@ -10,6 +10,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <style>
+        /* Mengincar input khusus di dalam class sampel-isi */
+        .sampel-isi .form-control {
+        background-color: #ffffff !important; /* Latar putih biar bersih */
+        border: 2px solid #ffffff !important; /* Border ungu biar kelihatan tegas */
+        border-radius: 10px;
+        color: #333; /* Warna teks saat diketik */
+    }
+
+    /* Efek saat diklik, dia bakal makin 'nyala' */
+    .sampel-isi .form-control:focus {
+        border-color: #e956ee !important;
+        box-shadow: 0 0 0 0.25rem rgba(235, 109, 214, 0.45) !important;
+        outline: 0;
+    }
+    </style>
+
 </head>
 
 <body>
@@ -341,6 +358,7 @@
     <p class="akhir">© 2025 Penerbit Metamorjiwa. Didesain dengan ❤️ di Indonesia. Web Developed by Techade.id</p>
     <!-- footer END -->
     <!-- bawah -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 

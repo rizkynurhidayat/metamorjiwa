@@ -56,6 +56,36 @@
     <!-- Page CSS -->
     <!-- Page -->
     <link rel="stylesheet" href="{{ asset('sneat') }}/assets/vendor/css/pages/page-auth.css" />
+
+    <style>
+      /* Efek saat input biasa fokus */
+      .form-control:focus {
+        border-color: #F8BBD0 !important;
+        box-shadow: 0 0 0 0.25rem rgba(248, 187, 208, 0.25) !important;
+      }
+
+      /* Perbaikan untuk Input Group (Password) */
+      .input-group.input-group-merge:focus-within .form-control,
+      .input-group.input-group-merge:focus-within .input-group-text {
+        border-color: #F8BBD0 !important;
+      }
+
+      .input-group.input-group-merge:focus-within {
+        box-shadow: 0 0 0 0.25rem rgba(248, 187, 208, 0.25) !important;
+        border-radius: 0.375rem; /* Menjaga lekukan sudut tetap rapi */
+      }
+
+      .form-check-input:checked {
+        background-color: #F8BBD0 !important;
+        border-color: #F8BBD0 !important;
+      }
+
+      /* Mengubah warna shadow/glow saat checkbox diklik */
+      .form-check-input:focus {
+        border-color: #F8BBD0 !important;
+        box-shadow: 0 0 0 0.25rem rgba(248, 187, 208, 0.25) !important;
+      }
+    </style>
     <!-- Helpers -->
     <script src="{{ asset('sneat') }}/assets/vendor/js/helpers.js"></script>
 
@@ -81,7 +111,7 @@
                     style="height: 40px; margin-right: 10px;">
                    
               </span>
-                  <span class="app-brand-text demo text-body fw-bolder">Metamorjiwa</span>
+                  <span class="app-brand-text demo text-body fw-bolder" style="color:#b57aa1;">Metamorjiwa</span>
                 
               </div>
               <!-- /Logo -->
@@ -133,7 +163,7 @@
                   @enderror 
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit" style="background-color: #F8BBD0 !important; border-color: #F8BBD0 !important; color: #FFFFFF !important; font-weight: 600 !important; border-radius: 8px !important; padding: 10px 20px;">Sign in</button>
                 </div>
               </form>
 
@@ -141,7 +171,7 @@
               <p class="text-center">
                 <span>New on our platform?</span>
                  <a href="/register">
-                  <span>Create an account</span>
+                  <span style="color: #fc89b1 !important;">Create an account</span>
                 </a>
                
               </p>
