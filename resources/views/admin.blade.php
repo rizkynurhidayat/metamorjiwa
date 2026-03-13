@@ -71,7 +71,7 @@
     </div>
 
     <div class="row mb-4">
-        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-lg-0">
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
             <div class="card card-hover h-100">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -85,8 +85,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-lg-0">
-            <div class="card card-hover h-100">
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="card card-hover h-100 position-relative"> 
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <div class="icon-box icon-brand-soft-purple">
@@ -96,38 +96,43 @@
                     </div>
                     <span class="d-block mb-1 text-muted fw-semibold">Pesan Masuk</span>
                     <h3 class="card-title mb-0 text-dark" style="font-weight: 700;">{{ $totalMessages ?? 0 }}</h3>
+                    
+                    <a href="{{ route('message.index') }}" class="stretched-link"></a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mb-sm-0">
-            <div class="card card-hover h-100">
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="card card-hover h-100 position-relative"> 
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="icon-box bg-label-info">
-                            <i class="bx bx-dock-top" style="color:#03c3ec;"></i>
+                        <div class="icon-box" style="background-color: #e0f7fa; color: #00bcd4; padding: 10px; border-radius: 8px;">
+                            <i class="bx bx-window-alt"></i> 
                         </div>
-                        <span class="badge bg-label-info rounded-pill">Aktif</span>
+                        <span class="badge bg-label-info rounded-pill" style="background-color: #e0f7fa; color: #00bcd4;">AKTIF</span>
                     </div>
-                    <span class="d-block mb-1 text-muted fw-semibold">Total Preview </span>
+                    <span class="d-block mb-1 text-muted fw-semibold">Total Preview</span>
                     <h3 class="card-title mb-0 text-dark" style="font-weight: 700;">{{ $totalPreview ?? 0 }}</h3>
+
+                    <a href="{{ route('preview.index') }}" class="stretched-link"></a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-sm-6">
-            <div class="card card-hover h-100">
+        <div class="col-lg-3 col-md-6 col-sm-6 mb-4">
+            <div class="card card-hover h-100 position-relative"> 
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="icon-box bg-label-warning">
-                            <i class="bx bx-star" style="color:#ffab00;"></i>
+                        <div class="icon-box" style="background-color: #fff3e0; color: #ff9800; padding: 10px; border-radius: 8px;">
+                            <i class="bx bx-star"></i>
                         </div>
-                        <span class="badge bg-label-warning rounded-pill">Review</span>
+                        <span class="badge bg-label-warning rounded-pill" style="background-color: #fff3e0; color: #ff9800;">REVIEW</span>
                     </div>
                     <span class="d-block mb-1 text-muted fw-semibold">Testimoni Klien</span>
                     <h3 class="card-title mb-0 text-dark" style="font-weight: 700;">{{ $totalTestimoni ?? 0 }}</h3>
+
+                    <a href="{{ route('testimoni.index') }}" class="stretched-link"></a>
                 </div>
             </div>
         </div>
-    </div>
 
     <div class="row">
         

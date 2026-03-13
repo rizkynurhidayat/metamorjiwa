@@ -103,8 +103,8 @@ class DatabaseSeeder extends Seeder
 
         // Preview
         $previews = [
-            ['tagline' => 'Monthly Habit Tracker', 'image' => 'monthly habit tracker.png'],
-            ['tagline' => 'Refleksi Diri', 'image' => 'refleksi diri.png'],
+            ['tagline' => 'Monthly Habit Tracker', 'image' => 'monthly-habit-tracker.png'],
+            ['tagline' => 'Refleksi Diri', 'image' => 'refleksi-diri.png'],
             ['tagline' => 'Weekly Planner', 'image' => 'weekly palnner.png'],
         ];
         foreach ($previews as $preview) {

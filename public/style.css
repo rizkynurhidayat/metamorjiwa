@@ -1,3 +1,10 @@
+html {
+    scroll-behavior: smooth;
+}
+#tentang, #preview, #testimoni {
+    scroll-margin-top: 100px; 
+}
+
 body {
     background: radial-gradient(circle at 20% 30%, #fff0f5 0%, #ffcce0 50%, #f8c8dc 100%) !important;
     margin: 0;
@@ -937,6 +944,7 @@ input {
 .footer {
     display: flex;
     justify-content: space-around;
+    color: #d33d92;
 }
 .li-foot {
     list-style-type: none;

@@ -177,15 +177,22 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                @foreach ( $preview as $preview )
-                <div class="swiper-slide" >
-                    <div class="preview-item2">
-                        
-                    <img  src="{{ asset('storage/'.$preview->image) }}">
-                    <p class="hand-font">{{ $preview->tagline}}</p>
-                    </div>
-                </div>
-                @endforeach
+                @foreach ( $preview as $item )
+<div class="swiper-slide">
+    <div class="preview-item2">
+        
+        @if($item->image && Storage::disk('public')->exists($item->image))
+            {{-- 1. Jika gambar di-upload lewat admin (tersimpan di folder storage) --}}
+            <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->tagline }}">
+        @else
+            {{-- 2. Jika gambar bawaan dari seeder (tersimpan di folder asset) --}}
+            <img src="{{ asset('asset/' . $item->image) }}" alt="{{ $item->tagline }}">
+        @endif
+
+        <p class="hand-font">{{ $item->tagline }}</p>
+    </div>
+</div>
+@endforeach
                
                 
             </div>
