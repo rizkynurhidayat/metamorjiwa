@@ -1107,6 +1107,7 @@ input {
 .footer {
     display: flex;
     justify-content: space-around;
+    color: #d33d92;
 }
 .li-foot {
     list-style-type: none;
