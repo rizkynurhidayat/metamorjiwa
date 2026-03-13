@@ -19,12 +19,11 @@ body {
     100% { transform: translateY(0); }
 }
 
-/* Animasi untuk bintang kilauan */
 .sparkle {
     position: absolute;
     width: 30px;
     height: 30px;
-    z-index: 2; /* Supaya berada di depan latar belakang */
+    z-index: 2;
     animation: blinkFloat 3s ease-in-out infinite alternate;
 }
 
@@ -41,15 +40,14 @@ body {
     background-color: white;
     border-radius: 100px 100px 0px 0px;
     position: relative;
-    z-index: 5; /* Harus lebih besar dari z-index #hero agar bisa menutupi */
-    margin-top: 85vh; /* Mendorong section putih ini sejauh 1 layar ke bawah */
+    z-index: 5;
+    margin-top: 85vh;
     padding-top: 50px;
     box-shadow: 0px -10px 30px rgba(0, 0, 0, 0.05);
 }
 .hand-font {
     font-family: "Patrick Hand", cursive;
     letter-spacing: 1px;
-    /* color: white; */
 }
 section {
     margin: 0;
@@ -69,74 +67,55 @@ section {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 100;
 }
+
+/* ===== NAVBAR ===== */
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;       /* nav-kiri & button sama tinggi */
-    padding: 14px 20px;
-    align-items: stretch;       /* nav-kiri & button sama tinggi */
+    align-items: stretch;
     padding: 14px 20px;
     border-radius: 15px;
     position: sticky;
     top: 0;
     z-index: 99;
     gap: 12px;
-    gap: 12px;
+    box-sizing: border-box;
+    width: 100%;
 }
-
 
 .nav-kiri {
     background-color: white;
     display: flex;
     justify-content: space-between;
-    align-items: center;        /* semua isi vertikal center */
-    flex: 1;                    /* ambil sisa lebar */
-    align-items: center;        /* semua isi vertikal center */
-    flex: 1;                    /* ambil sisa lebar */
+    align-items: center;
+    flex: 1;
+    min-width: 0;
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
-    padding: 0 10px 0 0;        /* padding kanan agar menu tidak nempel tepi */
-    overflow: hidden;           /* jaga border-radius tetap rapi */
-    padding: 0 10px 0 0;        /* padding kanan agar menu tidak nempel tepi */
-    overflow: hidden;           /* jaga border-radius tetap rapi */
+    padding: 0 10px 0 0;
+    overflow: visible;
 }
 
-/* Logo + nama brand */
-
-/* Logo + nama brand */
 .img-p {
     display: flex;
-    align-items: center;        /* logo & teks sejajar vertikal */
-    align-items: center;        /* logo & teks sejajar vertikal */
+    align-items: center;
     margin: 0;
     padding: 0;
     flex-shrink: 0;
-    padding: 0;
-    flex-shrink: 0;
 }
 
-
 .p-nav {
-    font-size: 20px;
     font-size: 20px;
     color: #ec4899;
     margin: 0;
     white-space: nowrap;
-    margin: 0;
-    white-space: nowrap;
 }
-
 
 .img-nav {
     margin: 12px 10px 12px 15px;
     display: block;
-    margin: 12px 10px 12px 15px;
-    display: block;
 }
 
-/* Menu links */
-
-/* Menu links */
 #ul-nav {
     list-style-type: none;
     display: flex;
@@ -160,7 +139,6 @@ nav {
     margin: 0 14px;
 }
 
-/* Button DAPATKAN */
 .container-nav-item {
     display: flex;
     align-items: stretch;
@@ -171,21 +149,17 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
-
     background-color: white;
     border: none;
     cursor: pointer;
-
     padding: 0 22px;
     border-radius: 10px;
     box-shadow: 0px 2px 5px #423b3f34;
-
     color: #6b4e71;
     font-family: serif;
     font-size: 17px;
     font-weight: 600;
     white-space: nowrap;
-
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -193,15 +167,14 @@ nav {
     transform: translateY(-1px);
     box-shadow: 0px 4px 12px #423b3f44;
 }
-/* --- VERSI NAVBAR (UKURAN IKON) --- */
+
 .book-container-navbar {
     position: relative;
-    width: 25px; 
+    width: 25px;
     height: 35px;
     flex-shrink: 0;
 }
 
-/* Tetap pakai class .book tapi di dalam container navbar */
 .book-container-navbar .book {
     position: absolute;
     top: 0;
@@ -213,7 +186,6 @@ nav {
     border-radius: 2px;
 }
 
-/* --- Efek Hover: trigger dari button, bukan dari container buku --- */
 .but-nav:hover .book-container-navbar .front {
     transform: translateX(-6px) rotate(-5deg);
 }
@@ -226,7 +198,10 @@ nav {
     transform: translateX(10px) translateY(3px) rotate(6deg);
 }
 
+/* Hamburger dihapus permanen */
+.menu-toggle { display: none !important; }
 
+/* ===== END NAVBAR ===== */
 
 #hero {
     display: flex;
@@ -301,7 +276,7 @@ nav {
 }
 
 .avatar-group .avatar-text {
-    background: #ec4899; /* Pink background */
+    background: #ec4899;
     color: white;
     display: flex;
     align-items: center;
@@ -332,22 +307,18 @@ nav {
     margin-top: 2px;
 }
 
-/* --- Kelopak Bunga Programmatic Realistis (Petals) --- */
 .petal-programmatic {
     position: absolute;
     pointer-events: none;
-    z-index: 6; /* Di depan kebanyakan elemen, bisa diatur ke z-index: 0 untuk di belakang buku */
+    z-index: 6;
     animation: floatPetalReal 6s ease-in-out infinite alternate;
     opacity: 0.8;
 }
 
 .css-petal {
     position: absolute;
-    /* Membentuk kelopak daun/bunga: satu sudut runcing, sisanya membulat */
     border-radius: 0 50% 50% 50%; 
-    /* Gradasi pink lembut */
     background: radial-gradient(circle at 30% 30%, #fff0f5 0%, #ffb6c1 60%, #ff69b4 100%);
-    /* Bayangan dalam (inset) untuk efek melengkung & bayangan luar untuk efek melayang */
     box-shadow: inset -3px -3px 6px rgba(200, 0, 100, 0.15), 
                 3px 5px 10px rgba(236, 72, 153, 0.25);
     z-index: 2;
@@ -355,66 +326,21 @@ nav {
     animation: floatUp 5s ease-in-out infinite alternate;
 }
 
-/* Kelopak 1: Kanan Atas (Besar, sedikit blur, paling dekat kamera) */
-.petal-1 { 
-    top: 12%; right: 3%; 
-    width: 45px; height: 45px; 
-    transform: rotate(15deg); 
-    filter: blur(2px);
-    animation-delay: 0s; 
-}
+.petal-1 { top: 12%; right: 3%; width: 45px; height: 45px; transform: rotate(15deg); filter: blur(2px); animation-delay: 0s; }
+.petal-2 { top: 70%; right: 4%; width: 30px; height: 30px; transform: rotate(65deg); animation-delay: 1.5s; }
+.petal-3 { top: 82%; right: 22%; width: 55px; height: 55px; transform: rotate(110deg); filter: blur(3px); animation-delay: 2.5s; z-index: 0; }
+.petal-4 { top: 30%; right: 48%; width: 35px; height: 35px; transform: rotate(-30deg); animation-delay: 0.8s; }
+.petal-5 { top: 10%; right: 28%; width: 25px; height: 25px; transform: rotate(200deg); animation-delay: 1.2s; }
+.petal-6 { top: 65%; right: 46%; width: 20px; height: 20px; transform: rotate(-60deg); filter: blur(1px); animation-delay: 2s; }
 
-/* Kelopak 2: Kanan tengah bawah mockup */
-.petal-2 { 
-    top: 70%; right: 4%; 
-    width: 30px; height: 30px; 
-    transform: rotate(65deg); 
-    animation-delay: 1.5s; 
-}
-
-/* Kelopak 3: Bawah mockup */
-.petal-3 { 
-    top: 82%; right: 22%; 
-    width: 55px; height: 55px; 
-    transform: rotate(110deg); 
-    filter: blur(3px);
-    animation-delay: 2.5s; 
-    z-index: 0;
-}
-
-/* Kelopak 4: Kiri mockup (batas hero-kiri & hero-kanan) */
-.petal-4 { 
-    top: 30%; right: 48%; 
-    width: 35px; height: 35px; 
-    transform: rotate(-30deg); 
-    animation-delay: 0.8s; 
-}
-
-/* Kelopak 5: Atas tengah mockup — TAMBAH */
-.petal-5 { 
-    top: 10%; right: 28%; 
-    width: 25px; height: 25px; 
-    transform: rotate(200deg); 
-    animation-delay: 1.2s; 
-}
-
-/* Kelopak 6: Kiri bawah mockup — TAMBAH */
-.petal-6 { 
-    top: 65%; right: 46%; 
-    width: 20px; height: 20px; 
-    transform: rotate(-60deg); 
-    filter: blur(1px);
-    animation-delay: 2s; 
-}
-
-/* Animasi khusus margin supaya nggak bentrok sama rotasi transform */
 @keyframes floatUp {
     0% { margin-top: 0px; opacity: 0.85; }
     100% { margin-top: -25px; opacity: 1; }
 }
+
 .hero-kanan {
     list-style-type: none;
-    width: 52%;                 /* sedikit lebih lebar biar mockup punya ruang */
+    width: 52%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -456,7 +382,6 @@ nav {
     transform: translateY(-1px);
 }
 
-/* ===== SECTION TENTANG ===== */
 #tentang {
     padding: 80px 6% 60px;
 }
@@ -522,7 +447,6 @@ nav {
     margin: 0;
 }
 
-/* Section badge label */
 .section-badge {
     display: inline-block;
     background: linear-gradient(to right, #fce7f3, #ede9fe);
@@ -536,7 +460,6 @@ nav {
     text-transform: uppercase;
 }
 
-/* Feature cards */
 .tentang-cards {
     display: flex;
     gap: 24px;
@@ -579,7 +502,6 @@ nav {
     margin: 0;
 }
 
-/* ===== SECTION HEADING (reusable) ===== */
 .section-heading {
     text-align: center;
     padding: 70px 5% 0;
@@ -600,35 +522,25 @@ nav {
     margin: 0;
 }
 
-/* ===== SECTION PREVIEW (REVAMPED) ===== */
 #preview {
     padding: 0 0 30px 0;
 }
 
 .swiper {
-    /* Reset override yang bentrok */
     width: 88%;
     max-width: 1100px;
     height: auto;
     min-height: 0;
     padding: 50px 5px 90px;
-
     margin: 10px auto 0;
-
     border-radius: 36px;
-
-    /* Gradient lembut lebih elegan dari flat pink */
     background: linear-gradient(135deg, #ffb6d9 0%, #f9a0c4 50%, #f0829e 100%);
-    box-shadow:
-        0 20px 60px rgba(236, 72, 153, 0.25),
-        inset 0 1px 0 rgba(255,255,255,0.35);
-
+    box-shadow: 0 20px 60px rgba(236, 72, 153, 0.25), inset 0 1px 0 rgba(255,255,255,0.35);
     position: relative;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-/* Dekorasi bintik cahaya di background card */
 .swiper::before {
     content: '';
     position: absolute;
@@ -650,18 +562,15 @@ nav {
 
 .swiper-wrapper {
     padding: 20px 0 10px;
-    align-items: center;    /* slide non-aktif lebih pendek → center biar rapi */
+    align-items: center;
 }
 
 .swiper-slide {
-    /* Biarkan swiper JS yang atur width via centeredSlides */
     width: 260px !important;
     height: auto !important;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
     opacity: 0.5;
     transform: scale(0.88);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -672,7 +581,6 @@ nav {
     transform: scale(1) !important;
 }
 
-/* Satu level sebelum/sesudah aktif agak terlihat */
 .swiper-slide-prev,
 .swiper-slide-next {
     opacity: 0.7 !important;
@@ -686,6 +594,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 14px;
+    padding-bottom: 10px;
 }
 
 .preview-item2 img {
@@ -693,20 +602,12 @@ nav {
     max-width: 240px;
     height: auto;
     border-radius: 16px;
-
-    /* Bingkai seperti buku */
-    box-shadow:
-        0 8px 24px rgba(0,0,0,0.18),
-        0 2px 8px rgba(0,0,0,0.10),
-        inset 0 0 0 1px rgba(255,255,255,0.15);
-
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10), inset 0 0 0 1px rgba(255,255,255,0.15);
     transition: box-shadow 0.4s ease;
 }
 
 .swiper-slide-active .preview-item2 img {
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.28),
-        0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.28), 0 4px 12px rgba(0,0,0,0.12);
 }
 
 .preview-item2 p {
@@ -717,9 +618,9 @@ nav {
     letter-spacing: 0.5px;
     margin: 0;
     text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
 }
 
-/* ── Tombol navigasi ── */
 .swiper-button-prev,
 .swiper-button-next {
     color: #fff !important;
@@ -749,7 +650,6 @@ nav {
     font-weight: 700;
 }
 
-/* ── Pagination ── */
 .swiper-pagination {
     bottom: 24px !important;
 }
@@ -768,47 +668,11 @@ nav {
     width: 44px !important;
 }
 
-
-
-/* .swiper-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
-} */
-/* .preview-item2{
-    padding-left: 25%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
-
-.preview-item2 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 10px;
-}
-
-.preview-item2 img {
-    width: 100%;
-    max-width: 280px;
-}
-
-.preview-item2 p {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
 #testimoni {
-    padding: 0;                          /* fix: padding: -100px tidak valid */
+    padding: 0;
     text-align: center;
     background-image: url(asset/foto-testimoni.png);
-    background-size: cover;              /* tambah agar foto tidak terpotong */
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
@@ -816,21 +680,19 @@ nav {
 }
 
 #testimoni h2 {
-    padding: 80px 6% 0;                  /* fix: pisah dari section padding */
+    padding: 80px 6% 0;
     color: white;
-    font-size: clamp(1.8rem, 5vw, 3rem); /* fix: 300% tidak responsif di HP */
+    font-size: clamp(1.8rem, 5vw, 3rem);
     margin: 0;
 }
 
-/* WRAPPER */
 .testi-swiper {
     width: 100%;
     max-width: 1100px;
     margin: 40px auto 0;
-    padding: 40px 0 80px;               /* tambah bottom agar pagination tidak menempel */
+    padding: 40px 0 80px;
 }
 
-/* CARD DASAR */
 .testi-card {
     max-width: 240px;
     padding: 16px;
@@ -841,26 +703,23 @@ nav {
     transition: 0.4s ease;
     opacity: 0.35;
     transform: scale(0.8);
-    max-height: none;                    /* fix: max-height: 220px bisa memotong konten */
+    max-height: none;
     box-sizing: border-box;
 }
 
-/* TENGAH (AKTIF) — fix: pakai tanpa spasi karena ada di elemen yang sama */
 .testi-swiper .swiper-slide-active.testi-card {
     background: #ffffff !important;
     opacity: 1 !important;
     transform: scale(1) !important;
 }
 
-/* PANAH */
 .testi-swiper .swiper-button-prev,
 .testi-swiper .swiper-button-next {
     color: #ff5fa2;
 }
 
-/* INDIKATOR GARIS */
 .testi-swiper .swiper-pagination {
-    bottom: 24px !important;             /* fix: tidak menempel konten */
+    bottom: 24px !important;
 }
 
 .testi-swiper .swiper-pagination-bullet {
@@ -879,19 +738,18 @@ nav {
     padding: 100px 0 0 0;
 }
 
-
 .section-buku {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Nengahin horizontal */
+    align-items: center;
     padding: 50px 0;
 }
 
 .buku-container {
     position: relative;
-    width: 250px; /* Sesuaikan lebar gambar kamu */
-    height: 330px; /* Sesuaikan tinggi gambar kamu */
+    width: 250px;
+    height: 330px;
     margin: 0 auto;
     cursor: pointer;
 }
@@ -904,38 +762,18 @@ nav {
     height: 60%;
     margin-left: 40px;
     object-fit: contain;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Biar gerakannya halus */
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    background: white; /* Jaga-jaga kalau gambar transparan */
+    background: white;
 }
 
-/* --- Tampilan Awal (Rapi Menumpuk) --- */
-.front { 
-    z-index: 3; 
-}
-.middle { 
-    z-index: 2; 
-    transform: scale(0.98); /* Sedikit lebih kecil biar rapi */
-}
-.back { 
-    z-index: 1; 
-    transform: scale(0.95); 
-}
+.front { z-index: 3; }
+.middle { z-index: 2; transform: scale(0.98); }
+.back { z-index: 1; transform: scale(0.95); }
 
-/* --- Tampilan Pas Kursor Nempel (Mekar Cantik) --- */
-/* Kita pakai jarak geser yang kecil aja biar nggak berantakan */
-.buku-container:hover .front {
-    transform: translateX(-25px) rotate(-3deg);
-}
-
-.buku-container:hover .middle {
-    transform: translateX(15px) translateY(-10px) rotate(2deg);
-}
-
-.buku-container:hover .back {
-    transform: translateX(45px) translateY(5px) rotate(5deg);
-}
-
+.buku-container:hover .front { transform: translateX(-25px) rotate(-3deg); }
+.buku-container:hover .middle { transform: translateX(15px) translateY(-10px) rotate(2deg); }
+.buku-container:hover .back { transform: translateX(45px) translateY(5px) rotate(5deg); }
 
 .sampel-container {
     width: 85%;
@@ -1039,15 +877,12 @@ input {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 25px 0px 0px 25px;
-    
-    /* Ukuran diperkecil */
     padding: 30px 20px; 
-    width:600px; /* Lebar lebih ringkas */
+    width:600px;
     height: 300px;
     margin-bottom:70px;
     margin-left: 70px;
     margin-right: -60px;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1063,20 +898,16 @@ input {
 }
 
 .but-hubungi {
-    display: inline-flex; /* Ganti ke inline-flex agar align-items bekerja */
-    align-items: center;  /* Nengahin ikon & teks secara vertikal */
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
-    padding: 12px 30px;   /* Padding lebih proporsional */
+    padding: 12px 30px;
     background: linear-gradient(to right, #ec4899, #a855f7);
     color: white;
     text-decoration: none;
     font-weight: 600;
-    border-radius: 50px;  /* Bentuk kapsul lebih estetik untuk tombol WA */
-    
-    /* Shadow lebih lembut dan menyebar */
+    border-radius: 50px;
     box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3); 
-    
-    /* Ganti font ke sans-serif agar lebih modern */
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -1084,17 +915,16 @@ input {
 }
 
 .whatsapp-icon {
-    width: 24px;   /* Ukuran sedikit diperkecil agar tidak mendominasi */
+    width: 24px;
     height: 24px;
     margin-right: 12px;
-    display: block; /* Agar tidak terpengaruh line-height teks */
+    display: block;
 }
 
-/* Efek Hover (Penting biar bagus!) */
 .but-hubungi:hover {
-    transform: translateY(-3px); /* Tombol sedikit naik */
+    transform: translateY(-3px);
     box-shadow: 0 15px 25px rgba(168, 85, 247, 0.4);
-    filter: brightness(1.1); /* Sedikit lebih terang saat di-hover */
+    filter: brightness(1.1);
 }
 
 .but-hubungi:active {
@@ -1125,95 +955,75 @@ input {
     text-align: center;
 }
 
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    cursor: pointer;
-    padding: 8px;
-    margin-right: 10px;
-    background: none;
-    border: none;
-    flex-shrink: 0;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: #6b4e71;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-
-
 @media only screen and (max-width: 768px) {
     nav {
-        padding: 10px 14px;
+        padding: 8px 12px;
         gap: 8px;
         align-items: stretch;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .nav-kiri {
+        flex: 1;
+        min-width: 0;
+        overflow: visible;
+        position: relative;
+        justify-content: space-between;
+        padding: 0 8px 0 0;
+    }
+
+    .img-p {
+        flex-shrink: 0;
+        overflow: visible;
+    }
+
+    .img-nav {
+        width: 40px;
+        height: 40px;
+        margin: 10px 10px 10px 12px;
+    }
+
+    .p-nav {
+        white-space: nowrap;
+        font-size: 18px;
+    }
+
+    /* TAMPILKAN ul-nav di 768px */
+    #ul-nav {
+        display: flex;
+    }
+
+    .li-nav {
+        margin: 0 12px;
+    }
+
+    .a-nav {
+        font-size: 14px;
     }
 
     .container-nav-item {
         align-items: stretch;
         flex-shrink: 0;
+        width: auto;
     }
 
-    .nav-kiri {
-        flex: 1;
-        position: relative;
-    }
-
-    .menu-toggle {
-        display: flex;
-    }
-
-    /* Sembunyikan menu link di mobile by default */
-    #ul-nav {
-        display: none;
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 0;
-        width: 100%;
-        background-color: white;
-        flex-direction: column;
-        text-align: center;
-        padding: 16px 0;
-        border-radius: 0 0 16px 16px;
-        box-shadow: 0 6px 20px rgba(66, 59, 63, 0.12);
-        z-index: 100;
-    }
-
-    #ul-nav.show {
-        display: flex;
-    }
-
-    .li-nav {
-        margin: 10px 0;
-    }
-
-    .a-nav {
-        font-size: 16px;
-    }
-
-    /* Button DAPATKAN di mobile: sama seperti desktop */
     .but-nav {
-        padding: 0 18px;
+        padding: 0 16px;
         font-size: 15px;
-        gap: 10px;
+        gap: 8px;
         height: 100%;
         min-height: 52px;
+        white-space: nowrap;
     }
 
     .book-container-navbar {
         width: 22px;
-        height: 32px;
+        height: 30px;
     }
 
     .but-nav span {
-        display: inline; /* Tetap tampilkan teks DAPATKAN */
+        display: inline;
     }
 
     #hero {
@@ -1309,9 +1119,9 @@ input {
     
     .background-second {
         margin-top: 100vh;
+        border-radius: 40px 40px 0 0;
     }
 
-    /* Tentang mobile */
     .tentang-wrapper {
         flex-direction: column;
         gap: 30px;
@@ -1341,22 +1151,21 @@ input {
         padding: 0 5%;
     }
     .glass-card {
-    width: 90%;
-    max-width: 400px; 
-    padding: 20px;
-    margin: 20px 0px; 
-    box-sizing: border-box;
-    border-radius: 20px; 
-    overflow: hidden; 
-    height: 370px;
-  }
-  .sampel-kiri h3{
-    font-size: 20px;
-    margin-bottom: 50px;
-    color: #6b4e71;
-    text-align: center;
-  }
-  
+        width: 90%;
+        max-width: 400px; 
+        padding: 20px;
+        margin: 20px 0px; 
+        box-sizing: border-box;
+        border-radius: 20px; 
+        overflow: hidden; 
+        height: 370px;
+    }
+    .sampel-kiri h3 {
+        font-size: 20px;
+        margin-bottom: 50px;
+        color: #6b4e71;
+        text-align: center;
+    }
 
     .sampel-container {
         flex-direction: column;
@@ -1371,25 +1180,24 @@ input {
 
     .sampel-isi {
         width: 100%;
-       
     }
     #hubungi {
-        padding: 40px 15px;   /* Padding dikurangi untuk layar HP */
+        padding: 40px 15px;
     }
 
     #hubungi h2 {
-        font-size: 28px;      /* Ukuran judul disesuaikan untuk HP */
+        font-size: 28px;
         margin-bottom: 10px;
     }
 
     #hubungi p {
-        font-size: 16px;      /* Ukuran teks disesuaikan untuk HP */
+        font-size: 16px;
         margin-bottom: 25px;
-        padding: 0 10px;      /* Jarak aman kiri-kanan teks */
+        padding: 0 10px;
     }
 
     .but-hubungi {
-        padding: 12px 24px;   /* Menyesuaikan ukuran tombol agar pas di jari */
+        padding: 12px 24px;
         font-size: 15px;
     }
     #foot {
@@ -1472,11 +1280,34 @@ input {
     }
 
     .testi-swiper .swiper-pagination-bullet {
-        width: 36px;                     /* lebih kecil agar muat di layar kecil */
+        width: 36px;
         height: 5px;
     }
 
     .akhir {
         font-size: 0.9rem;
     }
+}
+
+/* Layar sangat kecil: sembunyikan teks "Metamorjiwa", sisakan logo saja */
+@media only screen and (max-width: 600px) {
+    #ul-nav {
+        display: none;
+    }
+
+    .img-nav {
+        margin-right: 4px;
+    }
+
+    .but-nav {
+        font-size: 12px;
+        padding: 0 10px;
+        gap: 5px;
+    }
+
+    .book-container-navbar {
+        width: 16px;
+        height: 24px;
+    }
+    
 }
